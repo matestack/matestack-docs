@@ -36,8 +36,11 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem 'basemate-ui-core', :path => './vendor/basemate-ui-core'
-
+if ENV['RAILS_ENV'] == 'development'
+  gem 'basemate-ui-core', :path => './vendor/basemate-ui-core'
+else
+  gem 'basemate-ui-core', :git => 'https://github.com/basemate/basemate-ui-core.git'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
