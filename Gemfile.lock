@@ -1,5 +1,6 @@
-PATH
-  remote: vendor/basemate-ui-core
+GIT
+  remote: https://github.com/basemate/basemate-ui-core.git
+  revision: b99d7f57c5d9108fb0a250dcd0aa18d92c16bac2
   specs:
     basemate-ui-core (0.1.0)
       cells-haml
