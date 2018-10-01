@@ -29,3 +29,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore symlink to local basemate-ui-core repo
+/vendor/basemate-ui-core
