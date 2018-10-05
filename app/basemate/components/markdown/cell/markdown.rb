@@ -2,13 +2,12 @@ require 'redcarpet'
 require 'rouge'
 require 'rouge/plugins/redcarpet'
 
+class RougeRender < Redcarpet::Render::HTML
+  include Rouge::Plugins::Redcarpet
+end
+
 module Components
   module Markdown::Cell
-
-    class RougeRender < Redcarpet::Render::HTML
-      include Rouge::Plugins::Redcarpet
-    end
-
     class Markdown < Component::Cell::Static
 
       def parsed_markdown
