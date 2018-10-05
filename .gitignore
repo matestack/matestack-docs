@@ -32,3 +32,7 @@
 
 # Ignore symlink to local basemate-ui-core repo
 /vendor/basemate-ui-core
+
+# Ignore Gemfile.lock as quick fix for using other gem for basemate-ui-core in local dev
+
+Gemfile.lock
