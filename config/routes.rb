@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root to: 'website#home'
+  root to: 'docs#start'
 
-  get "page_1", to: 'website#page_1'
-  get "page_2", to: 'website#page_2'
+  scope :docs do
+    get "start", to: 'docs#start'
+    get "motivation", to: 'docs#motivation'
+    get "setup_sprockets", to: 'docs#setup_sprockets'
+    get "setup_webpacker", to: 'docs#setup_webpacker'
+    get "page_usage", to: 'docs#page_usage'
+    get "app_usage", to: 'docs#app_usage'
+    get "component_usage", to: 'docs#component_usage'
+  end
+
 
 end

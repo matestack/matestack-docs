@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/basemate/basemate-ui-core.git
-  revision: b99d7f57c5d9108fb0a250dcd0aa18d92c16bac2
+  revision: 0c52ba11609e2917016f7141e81022c493a3bd60
   specs:
     basemate-ui-core (0.1.0)
       cells-haml
@@ -176,6 +176,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    redcarpet (3.4.0)
     reform (2.2.4)
       disposable (>= 0.4.1)
       representable (>= 2.4.0, < 3.1.0)
@@ -186,6 +187,7 @@ GEM
       declarative (< 0.1.0)
       declarative-option (< 0.2.0)
       uber (< 0.2.0)
+    rouge (3.3.0)
     ruby_dep (1.5.0)
     rubyzip (1.2.2)
     sass (3.6.0)
@@ -267,6 +269,8 @@ DEPENDENCIES
   pg
   puma (~> 3.11)
   rails (~> 5.2.1)
+  redcarpet
+  rouge
   sass-rails (~> 5.0)
   selenium-webdriver
   spring

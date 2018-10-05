@@ -17,13 +17,24 @@
 //= require_tree .
 
 var basemateUiCoreTransitionStart = function(url){
-  document.querySelector('.mdl-spinner').style.display = "inline-block";
-  document.querySelector('.mdl-layout').MaterialLayout.toggleDrawer();
-  document.querySelector('.page-content').style.visibility = "hidden";
+  document.querySelector('#page_content').style.opacity = 0;
+  setTimeout(function () {
+    document.querySelector('.mdl-spinner').style.display = "inline-block";
+  }, 300);
 }
 
 var basemateUiCoreTransitionSuccess = function(url){
-  console.log("success")
   document.querySelector('.mdl-spinner').style.display = "none";
-  document.querySelector('.page-content').style.visibility = "visible";
+  document.querySelector('#page_content').style.opacity = 1;
+  var noticebarContainer = document.querySelector('#notice_bar');
+  var data = {message: 'loaded: ' + url, timeout: 1500};
+  noticebarContainer.MaterialSnackbar.showSnackbar(data)
+}
+
+var basemateUiCoreTransitionError = function(url){
+  document.querySelector('.mdl-spinner').style.display = "none";
+  document.querySelector('#page_content').style.opacity = 1;
+  var alertbarContainer = document.querySelector('#alert_bar');
+  var data = {message: 'error loading: ' + url, timeout: 3000};
+  alertbarContainer.MaterialSnackbar.showSnackbar(data)
 }

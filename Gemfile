@@ -36,11 +36,18 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-if ENV['RAILS_ENV'] == 'development'
-  gem 'basemate-ui-core', :path => './vendor/basemate-ui-core'
-else
-  gem 'basemate-ui-core', :git => 'https://github.com/basemate/basemate-ui-core.git'
-end
+# use this line in order to use local path instead of remote repo
+# don't commit this and run 'bundle install' with proper remote repo before deployment!
+# otherwise the Gemfile.lock has a wrong version locked
+# gem 'basemate-ui-core', :path => './vendor/basemate-ui-core'
+
+gem 'basemate-ui-core', :git => 'https://github.com/basemate/basemate-ui-core.git'
+
+# for markdown usage
+gem 'redcarpet'
+
+# for syntax highlighting
+gem 'rouge'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

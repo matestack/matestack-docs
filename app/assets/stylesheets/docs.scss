@@ -1,0 +1,162 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require docs/rouge
+ *= require_self
+ */
+
+ @import "shared/colors";
+
+ body{
+   color: $basemate-color-gray;
+ }
+
+ header{
+   a{
+     text-decoration: none;
+     color: inherit;
+   }
+ }
+
+ .mdl-layout__header {
+   .header__slogan{
+      color: $basemate-color-gray;
+      padding-right: 10px;
+   }
+
+   background-color: white;
+   min-height: 80px;
+   box-shadow: none;
+   border-bottom: 1px solid $basemate-color-gray-lighter;
+   .mdl-layout-title{
+     background-color: white;
+     height: 79px;
+     padding-top: 22px;
+     a{
+       text-decoration: none;
+       color: inherit;
+     }
+   }
+   .mdl-layout__drawer-button {
+     margin: 13px;
+     color: $basemate-color-gray;
+   }
+ }
+ .mdl-layout__header-row {
+   padding-top: 15px;
+ }
+
+ .header__link{
+   color: $basemate-color-red;
+ }
+
+ .mobile-header__logo{
+   @media only screen and (min-device-width: 1024px) {
+   	display: none;
+   }
+ }
+
+.mdl-layout__drawer {
+  border-right: 0px;
+  background-color: $basemate-color-gray;
+  .mdl-layout-title{
+     background-color: white;
+     height: 79px;
+     padding-top: 7px;
+     padding-left: 39px;
+     a{
+       text-decoration: none;
+       color: inherit;
+     }
+  }
+  .mdl-navigation{
+   .mdl-navigation__link {
+     color: white;
+     padding: 8px 40px;
+     &:hover{
+       background-color: $basemate-color-blue;
+     }
+     &.active{
+       background-color: $basemate-color-red;
+     }
+   }
+  }
+}
+
+.loading{
+  width: 100%;
+  text-align: center;
+}
+
+.mdl-spinner {
+  margin-top: 100px;
+  display: none;
+}
+
+.mdl-card__supporting-text{
+  width: initial;
+}
+
+.markdown-content{
+  margin-top: 40px;
+  h1{
+    font-size: 30px;
+  }
+  h2{
+    font-size: 25px;
+  }
+  h3{
+    font-size: 20px;
+  }
+  h4{
+    font-size: 18px;
+  }
+  h5{
+    font-size: 16px;
+  }
+  h6{
+    font-size: 14px;
+  }
+}
+
+.page-heading{
+  width: 100%;
+  min-height: 200px;
+  background-color: $basemate-color-gray-lighter;
+}
+
+#page_content{
+  width: 100%;
+  transition:opacity 0.2s linear;
+}
+
+.mdl-snackbar--notice {
+  bottom: 25px;
+  @media only screen and (min-device-width: 1024px) {
+    left: 85%;
+  }
+  @media only screen and (min-device-width: 1600px) {
+    left: 90%;
+  }
+  background-color: $basemate-color-blue;
+}
+
+.mdl-snackbar--alert{
+  bottom: 25px;
+  @media only screen and (min-device-width: 1024px) {
+    left: 85%;
+  }
+  @media only screen and (min-device-width: 1600px) {
+    left: 90%;
+  }
+  background-color: $basemate-color-red;
+}
