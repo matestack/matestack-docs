@@ -1,6 +1,6 @@
 module Components
-  module Markdown::Cell
-    class Markdown < Component::Cell::Static
+  module Md::Cell
+    class Md < Component::Cell::Static
 
       def parsed_markdown
         @md = File.read("#{::Rails.root}/app/#{options[:path]}.md")

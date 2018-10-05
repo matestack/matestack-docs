@@ -20,7 +20,7 @@ module Pages
           row do
             col desktop: 8, offset: { desktop: 2 } do
               div class: "page-content" do
-                markdown path: "docs/component_usage"
+                md path: "docs/component_usage"
               end
             end
           end
