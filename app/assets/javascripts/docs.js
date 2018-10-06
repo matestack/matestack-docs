@@ -24,17 +24,21 @@ var basemateUiCoreTransitionStart = function(url){
 }
 
 var basemateUiCoreTransitionSuccess = function(url){
-  document.querySelector('.mdl-spinner').style.display = "none";
-  document.querySelector('#page_content').style.opacity = 1;
-  var noticebarContainer = document.querySelector('#notice_bar');
-  var data = {message: 'loaded: ' + url, timeout: 1500};
-  noticebarContainer.MaterialSnackbar.showSnackbar(data)
+  setTimeout(function () {
+    document.querySelector('.mdl-spinner').style.display = "none";
+    document.querySelector('#page_content').style.opacity = 1;
+    var noticebarContainer = document.querySelector('#notice_bar');
+    var data = {message: 'loaded: ' + url, timeout: 1500};
+    noticebarContainer.MaterialSnackbar.showSnackbar(data)
+  }, 500);
 }
 
 var basemateUiCoreTransitionError = function(url){
-  document.querySelector('.mdl-spinner').style.display = "none";
-  document.querySelector('#page_content').style.opacity = 1;
-  var alertbarContainer = document.querySelector('#alert_bar');
-  var data = {message: 'error loading: ' + url, timeout: 3000};
-  alertbarContainer.MaterialSnackbar.showSnackbar(data)
+  setTimeout(function () {
+    document.querySelector('.mdl-spinner').style.display = "none";
+    document.querySelector('#page_content').style.opacity = 1;
+    var alertbarContainer = document.querySelector('#alert_bar');
+    var data = {message: 'error loading: ' + url, timeout: 3000};
+    alertbarContainer.MaterialSnackbar.showSnackbar(data)
+  }, 500);
 }

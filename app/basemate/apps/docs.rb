@@ -22,9 +22,9 @@ module Apps
       partial {
         header class: "mdl-layout__header" do
           div class: "mdl-layout__header-row" do
-            span class: "mdl-layout-title" do
+            span class: "mdl-layout-title header__logo" do
               link path: :root_path, class: "mobile-header__logo" do
-                img path: "basemate-logo-black.png", alt: "Basemate"
+                img class: "header__logo", path: "basemate-logo-black.png", alt: "Basemate"
               end
             end
             div class: "mdl-layout-spacer"
@@ -42,9 +42,9 @@ module Apps
     def side_navigation
       partial {
         div class: "mdl-layout__drawer" do
-          span class: "mdl-layout-title" do
+          span class: "mdl-layout-title header__logo" do
             link path: :root_path do
-              img path: "basemate-logo-black.png", alt: "Basemate"
+              img class: "header__logo", path: "basemate-logo-black.png", alt: "Basemate"
             end
           end
           nav class: "mdl-navigation" do
