@@ -7,7 +7,7 @@ header{
 
 .header__logo {
   img{
-    height: 30px;
+    height: 21px;
     margin-top: 5px;
   }
 }
@@ -47,7 +47,7 @@ header{
 }
 
 .mobile-header__logo{
-  @media only screen and (min-device-width: 1024px) {
+  @media only screen and (min-width: 1024px) {
    display: none;
   }
 }
