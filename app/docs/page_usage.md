@@ -25,25 +25,12 @@ Your Application Layout:
 app/views/layouts/application.html.erb
 
 ```erb
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>My App</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <div id="basemate_ui">
-      <%= yield %>
-    </div>
-  </body>
-</html>
+<!-- somewhere in your body tag -->
+<div id="basemate_ui">
+  <%= yield %>
+</div>
 ```
-Note: Wrap your content with a div and assgin the id  "basemate_ui"
+Note: Wrap your classic 'yield' with a div and assgin the id  "basemate_ui"
 
 Your Controller Action:
 
@@ -73,11 +60,11 @@ module Pages
       def response
 
         components {
-          row do
-            col do
+          div class: "row" do
+            div class: "col" do
               plain @foo
             end
-            col id: "my_special_col" do
+            div class: "col", id: "my_special_col" do
               plain @bar
             end
           end
@@ -107,22 +94,6 @@ As you can see, each component receives an id that is automatically created
 using the components' name. Those ids should help you style specific parts of
 your page later on, and can be overwritten in the page response if you need more freedom.
 
-Note:
-
-- "row", "col", "plain" are predefined core components
-  - a documentation of predefined core component can be found here: TODO
-- row/col class setup for bootstrap 4.x and material-design-lite can be found here:
-  - bootstrap 4.x: TODO
-  - material-design-lite: TODO
-- you can customize the output of the core components
-  - see: [Customize](#customize)
-- you can add your own components
-  - see: [Customize](#customize)
-- you can use styles from Basemate Themes
-  - see: [Themes](#themes)
-- you can use components from Basemate Bundles
-  - see: [Bundles](#bundles)
-
 ### Structure your basemate Page response with partials
 
 If you don't want to define the response of you page in one block, you can use
@@ -138,19 +109,19 @@ module Pages
       def response
 
         components {
-          row do
-            col do
+          div class: "row" do
+            div class: "col" do
               plain @foo
             end
-            col do
+            div class: "col" do
               plain @bar
             end
           end
-          row do
-            col do
+          div class: "row" do
+            div class: "col" do
               plain "hello"
             end
-            col do
+            div class: "col" do
               plain "world"
             end
           end
@@ -180,11 +151,11 @@ module Pages
 
       def row_1
         partial {
-          row do
-            col do
+          div class: "row" do
+            div class: "col" do
               plain @foo
             end
-            col do
+            div class: "col" do
               plain @bar
             end
           end
@@ -193,11 +164,11 @@ module Pages
 
       def row_2
         partial {
-          row do
-            col do
+          div class: "row" do
+            div class: "col" do
               plain "hello"
             end
-            col do
+            div class: "col" do
               plain "world"
             end
           end
@@ -227,11 +198,11 @@ module Pages
 
       def row first_col, second_col
         partial {
-          row do
-            col do
+          div class: "row" do
+            div class: "col" do
               plain first_col
             end
-            col do
+            div class: "col" do
               plain second_col
             end
           end
@@ -278,11 +249,11 @@ module Pages
 
       def response
         components {
-          row do
-            col do
+          div class: "row" do
+            div class: "col" do
               plain @foo
             end
-            col do
+            div class: "col" do
               plain @bar
             end
           end
@@ -321,8 +292,8 @@ module Pages
 
       def member_profile member
         partial {
-          row do
-            col do
+          div class: "row" do
+            div class: "col" do
               plain member
             end
           end
