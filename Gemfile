@@ -41,7 +41,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # otherwise the Gemfile.lock has a wrong version locked
 # gem 'basemate-ui-core', :path => './vendor/basemate-ui-core'
 
-gem 'basemate-ui-core', :git => 'https://github.com/basemate/basemate-ui-core.git'
+# gem 'basemate-ui-core', :git => 'https://github.com/basemate/basemate-ui-core.git'
+gem 'basemate-ui-core', '~> 0.2.0'
 
 # for markdown usage
 gem 'redcarpet'

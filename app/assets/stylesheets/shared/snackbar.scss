@@ -1,20 +1,21 @@
 .mdl-snackbar--notice {
   bottom: 25px;
-  @media only screen and (min-device-width: 1024px) {
+  @media only screen and (min-width: 1024px) {
     left: 85%;
   }
-  @media only screen and (min-device-width: 1650px) {
+  @media only screen and (min-width: 1650px) {
     left: 90%;
   }
   background-color: $basemate-color-blue;
 }
 
+
 .mdl-snackbar--alert{
   bottom: 25px;
-  @media only screen and (min-device-width: 1024px) {
+  @media only screen and (min-width: 1024px) {
     left: 85%;
   }
-  @media only screen and (min-device-width: 1650px) {
+  @media only screen and (min-width: 1650px) {
     left: 90%;
   }
   background-color: $basemate-color-red;
