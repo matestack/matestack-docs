@@ -48,15 +48,21 @@ module Apps
             end
           end
           nav class: "mdl-navigation" do
-            transition path: :start_path, text: "Start", class: "mdl-navigation__link"
-            transition path: :motivation_path, text: "Why basemate?", class: "mdl-navigation__link"
-            transition path: :setup_sprockets_path, text: "Setup with Sprockets", class: "mdl-navigation__link"
-            transition path: :setup_webpacker_path, text: "Setup with Webpacker", class: "mdl-navigation__link"
-            transition path: :page_usage_path, text: "Page Usage", class: "mdl-navigation__link"
-            transition path: :app_usage_path, text: "App Usage", class: "mdl-navigation__link"
-            transition path: :component_usage_path, text: "Component Usage", class: "mdl-navigation__link"
+            partial :transition_link, :root_path, "Start"
+            partial :transition_link, :motivation_path, "Why basemate?"
+            partial :transition_link, :setup_sprockets_path, "Setup with Sprockets"
+            partial :transition_link, :setup_webpacker_path, "Setup with Webpacker"
+            partial :transition_link, :page_usage_path, "Page Usage"
+            partial :transition_link, :app_usage_path, "App Usage"
+            partial :transition_link, :component_usage_path, "Component Usage"
           end
         end
+      }
+    end
+
+    def transition_link path, text
+      partial {
+        transition path: path, text: text, class: "mdl-navigation__link"
       }
     end
 
