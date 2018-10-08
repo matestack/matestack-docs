@@ -1,5 +1,4 @@
-This setup part documents the simplest approach to use Basemate::Ui::Core
-without any basemate bundle or theme involved. Assets are compiled and served
+This setup part documents the simplest approach to use Basemate::Ui::Core. Assets are compiled and served
 only via sprockets. This makes it very easy to integrate it in a classic Rails
 project without any further dependencies.
 **Do not use this setup if you want to build custom vue.js components.**
@@ -11,7 +10,7 @@ use Webpacker (see: [Setup with Webpacker](/docs/setup_webpacker)).
 Add 'basemate-ui-core' to your Gemfile
 
 ```ruby
-gem 'basemate-ui-core', :git => 'https://github.com/basemate/basemate-ui-core.git'
+gem 'basemate-ui-core', '~> 0.2.0'
 ```
 
 and run
