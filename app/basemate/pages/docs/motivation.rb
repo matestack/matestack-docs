@@ -12,7 +12,7 @@ module Pages
             row do
               col desktop: 8, offset: { desktop: 2 } do
                 div class: "page-content" do
-                  heading size: 2, text: "Why Basemate?"
+                  heading size: 2, text: "Why basemate?"
                   heading size: 5, text: "Escape the frontend hustle. Create beautiful software easily. Use basemate."
                 end
               end
