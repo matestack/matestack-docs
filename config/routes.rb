@@ -13,5 +13,8 @@ Rails.application.routes.draw do
     get "component_usage", to: 'docs#component_usage'
   end
 
+  get "button_demo", to: 'button_demo#show'
+  delete "demo_user/:id", to: 'button_demo#delete', as: "delete_demo_user"
+
 
 end
