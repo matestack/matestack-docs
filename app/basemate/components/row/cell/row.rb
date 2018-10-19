@@ -6,6 +6,7 @@ module Components
         classes = []
 
         classes << "row"
+        classes << options[:class]
         classes << "mdl-grid"
         classes << "mdl-grid--no-spacing" if options[:no_spacing]
 

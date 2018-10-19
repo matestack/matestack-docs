@@ -34,14 +34,14 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
+# gem 'bootsnap', '>= 1.1.0', require: false
 
 # use this line in order to use local path instead of remote repo
 # don't commit this and run 'bundle install' with proper remote repo before deployment!
 # otherwise the Gemfile.lock has a wrong version locked
 # gem 'basemate-ui-core', :path => './vendor/basemate-ui-core'
 # gem 'basemate-ui-core', :git => 'https://github.com/basemate/basemate-ui-core.git'
-gem 'basemate-ui-core', '~> 0.3.0'
+gem 'basemate-ui-core', '~> 0.4.0'
 
 # for markdown usage
 gem 'redcarpet'
@@ -51,6 +51,9 @@ gem 'rouge'
 
 # for monitoring
 gem 'scout_apm'
+
+# for performance monitoring
+gem 'rack-mini-profiler'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -6,6 +6,7 @@ module Components
         classes = []
 
         classes << "col"
+        classes << options[:class]
         classes << "mdl-cell--#{options[:desktop]}-col-desktop" unless options[:desktop].nil?
         classes << "mdl-cell--#{options[:tablet]}-col-tablet" unless options[:tablet].nil?
         classes << "mdl-cell--#{options[:phone]}-col-phone" unless options[:phone].nil?
