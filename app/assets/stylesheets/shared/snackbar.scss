@@ -1,9 +1,10 @@
 .mdl-snackbar--notice {
-  bottom: 25px;
   @media only screen and (min-width: 1024px) {
+    bottom: 25px;
     left: 85%;
   }
   @media only screen and (min-width: 1650px) {
+    bottom: 25px;
     left: 90%;
   }
   background-color: $basemate-color-blue;
@@ -11,11 +12,12 @@
 
 
 .mdl-snackbar--alert{
-  bottom: 25px;
   @media only screen and (min-width: 1024px) {
+    bottom: 25px;
     left: 85%;
   }
   @media only screen and (min-width: 1650px) {
+    bottom: 25px;
     left: 90%;
   }
   background-color: $basemate-color-red;
