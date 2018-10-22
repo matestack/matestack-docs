@@ -12,7 +12,7 @@ module Pages
           page_header title: @title, sub_title: @sub_title
           row do
             col desktop: 8, offset: { desktop: 2 } do
-              div class: "page-content" do
+              div class: "page-content concepts" do
                 row do
                   col do
                     md path: "markdown/guides/basic_concepts/building_blocks_1"

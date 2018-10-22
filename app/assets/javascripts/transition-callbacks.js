@@ -6,6 +6,7 @@ var basemateUiCoreTransitionStart = function(url){
 }
 
 var basemateUiCoreTransitionSuccess = function(url){
+  document.getElementsByClassName("mdl-layout__content")[0].scrollTop = 0
   setTimeout(function () {
     document.querySelector('.mdl-spinner').style.display = "none";
     document.querySelector('#page_content').style.opacity = 1;
