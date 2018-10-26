@@ -10,14 +10,14 @@ You already have set up a basemate page with corresponding Rails route and contr
 
 ## 2. Create folder structure
 
-In your app/basemate folder, create a 'components' folder (if it not already exists). In this folder, create a folder that is named after your custom static component and enter this folder.
+In your app/basemate folder, create a 'components' folder (if it not already exists). In this folder, create a folder that is named after your custom static component and enter this folder. For the sake of the basemate team's favorite food, we will call our component **hummus**!
 
 ```
 cd app/basemate
 mkdir components
 cd components
-mkdir your_custom_component
-cd your_custom_component
+mkdir hummus
+cd hummus
 ```
 
 ## 3. Create your custom component - simple examples
@@ -26,23 +26,23 @@ Now, you got to choose whether you want to define your component in a Ruby class
 
 ### 3.1 Creating your custom component in Ruby
 
-In your your\_custom\_component folder, create the folder that will host your component and create your `.rb`-file.
+In the hummus folder, create the folder that will host your component and create your `.rb`-file.
 
 ```
 mkdir cell
 cd cell
-touch your_custom_component.rb
+touch hummus.rb
 ```
 
-Define your custom component in the your\_custom\_component.rb file following the naming conventions:
+Define your custom component in the hummus.rb file following the naming conventions:
 
 ```ruby
-class Components::YourCustomComponent::Cell::YourCustomComponent < Component::Cell::Static
+class Components::Hummus::Cell::Hummus < Component::Cell::Static
 
   def response
     components {
       div class: "bar" do
-        plain "And this is your custom component, yay!"
+        plain "And this is your hummus component, yay!"
       end
     }
   end
@@ -50,26 +50,26 @@ class Components::YourCustomComponent::Cell::YourCustomComponent < Component::Ce
 end
 ```
 
-See 4. Usage for results.
+See **4. Usage** for results.
 
 ### 3.2 Creating your custom component in Haml
 
-In your your\_custom\_component folder, create the folder that will host your component and create your `.haml`-file.
+In the hummus folder, create the folder that will host your component and create your `.haml`-file.
 
 ```
 mkdir view
 cd view
-touch your_custom_component.haml
+touch hummus.haml
 ```
 
-Define your custom component in the your\_custom\_component.haml file following the naming conventions:
+Define your custom component in the hummus.haml file:
 
 ```haml
 .bar
-  "And this is your custom component, yay!"
+  "And this is your hummus component, yay!"
 ```
 
-See 4. Usage for results.
+See below for the results.
 
 ## 4. Usage
 
@@ -85,7 +85,7 @@ class Pages::Website::Home < Page::Cell::Page
           plain "This is Home!"
         end
       end
-      your_custom_component
+      hummus
     }
   end
 
@@ -99,20 +99,20 @@ and it creates
   <span>This is Home!</span>
 </div>
 <div class="bar">
-  And this is your custom component, yay!
+  And this is your hummus component, yay!
 </div>
 ```
 
 ## 5. Namespacing and sub-components
 
-Inside your components/your\_custom\_component folder, you can create various sub-components by naming them differently from the folder name. They will be namespaced afterwards. For example, create a heading.rb in components/your\_custom\_component/cell like that:
+Inside your components/hummus folder, you can create various sub-components by naming them differently than the folder name. They will be namespaced afterwards. For example, create a heading.rb in components/hummus/cell like that:
 
 ```ruby
-class Components::YourCustomComponent::Cell::Heading < Component::Cell::Static
+class Components::Hummus::Cell::Heading < Component::Cell::Static
 
   def response
     components {
-      heading size: 3, text: "Your custom component heading!"
+      heading size: 3, text: "Your hummus component heading!"
     }
   end
 
@@ -131,8 +131,8 @@ class Pages::Website::Home < Page::Cell::Page
           plain "This is Home!"
         end
       end
-      your_custom_component_heading
-      your_custom_component
+      hummus_heading
+      hummus
     }
   end
 
@@ -145,9 +145,9 @@ and it creates
 <div class="foo">
   <span>This is Home!</span>
 </div>
-<h3>Your custom component heading!</h3>
+<h3>Your hummus component heading!</h3>
 <div class="bar">
-  And this is your custom component, yay!
+  And this is your hummus component, yay!
 </div>
 ```
 
@@ -156,10 +156,10 @@ and it creates
 To further customize your components, you can use a prepare method within the component definition or use option values to further specify their appearance.
 
 ```ruby
-class Components::YourCustomComponent::Cell::Heading < Component::Cell::Static
+class Components::Hummus::Cell::Heading < Component::Cell::Static
 
   def prepare
-    @title = "Your generic heading title"
+    @title = "Your generic hummus title"
   end
 
   def response
@@ -183,8 +183,8 @@ class Pages::Website::Home < Page::Cell::Page
           plain "This is Home!"
         end
       end
-      your_custom_component_heading size: 1, sub_title_size: 3, text: "Specific page subtitle"
-      your_custom_component
+      hummus_heading size: 1, sub_title_size: 3, text: "Specific hummus subtitle"
+      hummus
     }
   end
 
@@ -197,8 +197,8 @@ and it creates
 <div class="foo">
   <span>This is Home!</span>
 </div>
-<h1>Your generic heading title</h1>
-<h3>Specific page subtitle</h3>
+<h1>Your generic hummus title</h1>
+<h3>Specific hummus subtitle</h3>
 <div class="bar">
   And this is your custom component, yay!
 </div>

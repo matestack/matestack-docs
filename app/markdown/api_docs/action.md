@@ -1,6 +1,6 @@
 # basemate core component: Action
 
-This component is used to perform actions.
+This component is used to perform actions. It renders a `<span>` tag around optional content.
 
 ## Parameters
 The basemate action expects at least a path and a method. Depending on what you want to achieve, it can take params, data and success reactions as options.
