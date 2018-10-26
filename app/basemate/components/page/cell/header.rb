@@ -1,9 +1,5 @@
 class Components::Page::Cell::Header < Component::Cell::Static
 
-  def prepare
-    @github_link = "https://github.com/basemate"
-  end
-
   def response
     components {
       div class: "page-heading" do
