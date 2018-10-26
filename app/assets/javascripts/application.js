@@ -11,8 +11,18 @@
 // about supported directives.
 //
 //= require activestorage
+//= require cable
 //= require material.min
 //= require basemate-ui-core
+//= require serviceworker-companion
 
 //= require transition-callbacks
 //= require action-callbacks
+
+//= require crazy/js/crazy
+
+App.cable.subscriptions.create("BasemateUiCoreChannel", {
+  received(data) {
+    BasemateUiCore.basemateEventHub.$emit('BasemateUiCoreChannel', data)
+  }
+});

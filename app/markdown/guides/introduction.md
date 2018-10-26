@@ -1,7 +1,7 @@
 ## What is basemate?
 **basemate = Rails + Vue.js**
 
-basemate is a "Rails Engine", turning the MVC-Framework "Ruby on Rails" into a
+basemate is a Rails Engine, turning the MVC-Framework Ruby on Rails into a
 Fullstack Web-Development Framework. With basemate you are able to write dynamic
 Web-Apps in pure Ruby. Javascript/HTML/CSS is only used for adding special, custom
 UI-Behaviour.
@@ -15,24 +15,35 @@ basemate progressively replaces the classic Rails-View-Layer. You are able to us
 it alongside your classic views and incrementally turn your Rails-App into a
 dynamic, more maintainable Web-App.
 
-Escape the frontend hustle. Create solid software easily. Use basemate.
+## Why basemate?
 
-## Current State
-This project is currently under heavy development and should not be used until the
-first tested, stable version is released. Please use it only after being
-onboarded by the basemate team. Feel free to reach out if you really can't
-wait to start :)
+We loved Rails and we loved how simple it was, to create applications using just Rails.
+Nowadays, Web Apps often have to be dynamic. Users don't enjoy static
+request/response Websites with constant full page reloads. They are used to native
+Apps and the so called "App-feeling". Rails doesn't serve you well here.
 
-## Roadmap
+So we started to create fullblown Javascript applications and reduced Rails to a pure JSON API.
+Now we got that dynamic "App-feeling" on our UIs but increased the complexity in
+our development. Implementing two separate systems (backend-api, frontent-app) is a
+pain: two deployments, two test environments, two frameworks, two everything...!
 
-- Add more guides
-- Add API documentation
-- Add core form components
-- Add tests
-- Get user feedback
-- Implement feedback
-- Prepare stable release
+This sophisticated architecture offers a lot of flexibility and possibilites how
+to extend your systems, sure! But you know what? We didn't need that flexibility! In 90%
+of our projects, we just had to create a straight forward app for a small to medium-size
+company but ended up setting up an architecture which would be suitable for big enterprises.
 
-## License
-Basemate UI Core is available as open source under the terms of the
-[MIT License](https://opensource.org/licenses/MIT).
+So we made a step back and rethought the way we implemented software. We thought
+about the biggest pains we had while creating modern Web UIs. We called it the
+"frontend hustle". We realized that we still love most concepts of Rails, we just
+were missing a good approach to easily define a maintainable, dynamic UI deeply
+integrated into Rails. So we invented basemate!
+
+We made basemate for us. We already use it in our daily business and we love it. We want to
+share our approach with all other developers and improve the architecture in a
+community of mates! So if you're with us:
+
+Escape the frontend hustle. Create maintainable, dynamic and beautiful UIs easily. Use basemate.
+
+## How does it work?
+
+Let's have a look on how following dynamic UI is implemented in basemate:

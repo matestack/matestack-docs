@@ -1,7 +1,7 @@
-var basemateUiCoreActionSuccess = function(){
+var basemateUiCoreActionSuccess = function(response){
   setTimeout(function () {
     var noticebarContainer = document.querySelector('#notice_bar');
-    var data = {message: 'done', timeout: 1500};
+    var data = {message: JSON.stringify(response.data.message), timeout: 3000};
     noticebarContainer.MaterialSnackbar.showSnackbar(data)
   }, 500);
 }
