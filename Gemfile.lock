@@ -47,7 +47,7 @@ GEM
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
-    basemate-ui-core (0.4.0)
+    basemate-ui-core (0.5.0)
       cells-haml
       cells-rails
       rails (>= 5.0.0)
@@ -266,7 +266,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  basemate-ui-core (~> 0.4.0)
+  basemate-ui-core (~> 0.5.0)
   byebug
   capybara (>= 2.15)
   chromedriver-helper
