@@ -1,4 +1,4 @@
-# basemate core component: Partial
+# basemate core component: Plain
 
 This element simply renders the value of a variable (or simple a string) wherever you want it.
 
