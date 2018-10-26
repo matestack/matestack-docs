@@ -31,7 +31,7 @@ app/views/layouts/application.html.erb
   <%= yield %>
 </div>
 ```
-Note: Wrap your classic 'yield' with a div and assgin the id  "basemate_ui"
+Note: Wrap your classic 'yield' with a div and assign the id  "basemate_ui"
 
 Your Controller Actions:
 
