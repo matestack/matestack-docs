@@ -8,5 +8,9 @@ class GuidesController < ApplicationController
     responder_for(page_class)
   end
 
+  def paper
+    responder_for(Pages::Paper)
+  end
+
 
 end

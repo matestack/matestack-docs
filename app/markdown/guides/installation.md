@@ -10,7 +10,7 @@ add basemate to your Rails app.
 Add 'basemate-ui-core' to your Gemfile
 
 ```ruby
-gem 'basemate-ui-core', '~> 0.4.0'
+gem 'basemate-ui-core', '~> 0.5.0'
 ```
 
 and run

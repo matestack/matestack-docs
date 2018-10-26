@@ -1,6 +1,6 @@
 module Pages
   module ApiDocs
-    class Start < Page::Cell::Page
+    class ActionDoc < Page::Cell::Page
 
       def prepare
         @title = "Core Components API"
@@ -12,7 +12,7 @@ module Pages
           page_header title: @title, sub_title: @sub_title
           row do
             col desktop: 8, offset: { desktop: 2} do
-              md path: "markdown/api_docs/start"
+              md path: "markdown/api_docs/action"
             end
           end
         }
