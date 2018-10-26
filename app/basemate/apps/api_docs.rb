@@ -9,7 +9,7 @@ module Apps
         :main, :nav, :partial, :section,
       ]
       @navigation_items_display = [
-        :heading, :plain, :pg, :span, :icon, :list, :br,
+        :heading, :plain, :pg, :span, :icon, :list, :table, :br,
       ]
       @navigation_items_media = [
         :html, :img
