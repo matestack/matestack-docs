@@ -1,4 +1,4 @@
-# basemate core component: Main
+# basemate core component: Span
 
 The HTML span tag implemented in ruby.
 

@@ -1,4 +1,4 @@
-# basemate core component: Main
+# basemate core component: Section
 
 The HTML section tag implemented in ruby.
 

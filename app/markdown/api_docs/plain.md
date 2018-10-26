@@ -1,23 +1,21 @@
 # basemate core component: Partial
 
-This element simply renders the value of a variable wherever you want it.
+This element simply renders the value of a variable (or simple a string) wherever you want it.
 
 ## Parameters
 
 This component expects one parameter.
 
-## Example
+## Example 1
 
-Render a variable into a div tag.
+Rendering a string into a div tag.
 
 ```ruby
-
-@foo = "Hello World"
 
 def response
   components {
     div id: "foo", class: "bar" do
-      plain @foo
+      plain "Hello World"
     end
   }
 end
@@ -29,5 +27,30 @@ returns
 ```html
 <div id="foo" class="bar">
   Hello World
+</div>
+```
+## Example
+
+Render a variable into a div tag.
+
+```ruby
+
+@hello = "World"
+# ...
+def response
+  components {
+    div id: "foo", class: "bar" do
+      plain @hello
+    end
+  }
+end
+
+```
+
+returns
+
+```html
+<div id="foo" class="bar">
+  World
 </div>
 ```
