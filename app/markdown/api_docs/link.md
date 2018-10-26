@@ -6,6 +6,7 @@ This component is used to either navigate within your basemate application or to
 
 This component create a `<a>`-tag and expects a mandatory path input and optional options parameters.
 
+#### # path
 If the path input is a **string** it creates a link to the outside web.
 
 If the path input is a **symbol** (e.g. :root_path) it creates a route **within** your Rails application. See example 4 for further details.
