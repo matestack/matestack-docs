@@ -48,7 +48,7 @@ module Apps
             span class: "navigation-header" do
               plain "Diving Deeper"
             end
-            partial :transition_link, :guides_path, { key: "create_a_custom_component" }, "Create a custom Component"
+            partial :transition_link, :guides_path, { key: "custom_static_component" }, "Custom static component"
             # partial :transition_link, :motivation_path, "Why basemate?"
             # partial :transition_link, :installation_path, "Installation"
             # partial :transition_link, :basic_concepts_path, "Basic Concepts"

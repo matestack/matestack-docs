@@ -5,8 +5,11 @@ module Apps
       @title = "Basemate Ui Core API"
       @github_link = "https://github.com/basemate"
       @navigation_items_structure = [
-        :div, :header, :heading,
-        :main, :nav, :partial, :plain, :section, :span,
+        :div, :header,
+        :main, :nav, :partial, :section,
+      ]
+      @navigation_items_display = [
+        :heading, :plain, :pg, :span, :icon, :list, :br,
       ]
       @navigation_items_media = [
         :html, :img
@@ -53,6 +56,12 @@ module Apps
               plain "Structure"
             end
             @navigation_items_structure.each do |item|
+              partial :transition_link, :api_docs_path, { key: item }, item.to_s
+            end
+            span class: "navigation-header" do
+              plain "Display"
+            end
+            @navigation_items_display.each do |item|
               partial :transition_link, :api_docs_path, { key: item }, item.to_s
             end
             span class: "navigation-header" do
