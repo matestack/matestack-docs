@@ -57,7 +57,7 @@ to fill the database Tasks:
 db/seeds.rb
 
 ```ruby
-DemoTask.create([
+Task.create([
   { name: 'Learn basemate' },
   { name: 'Use basemate' },
   { name: 'Extend basemate' }

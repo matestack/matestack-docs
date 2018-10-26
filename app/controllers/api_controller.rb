@@ -46,7 +46,7 @@ class ApiController < ApplicationController
     comment = DemoComment.create(comment_params)
 
     unless comment.errors.any?
-      ActionCable.server.broadcast("basemate_ui_core", { message: "comments_changed" })
+      broadcast
       render status: 201, json: { message: "comment created" }
     else
       render status: 422, json: { message: "comment creation failed" }
@@ -56,11 +56,17 @@ class ApiController < ApplicationController
   def delete_comment
     comment = DemoComment.find params[:id]
     comment.destroy
-    ActionCable.server.broadcast("basemate_ui_core", { message: "comments_changed" })
+    broadcast
     render status: 200, json: { message: "comment deleted" }
   end
 
   protected
+
+  def broadcast
+    ActionCable.server.broadcast("basemate_ui_core", {
+      message: "comments_changed"
+    })
+  end
 
   def task_params
     params.require(:task).permit(:name, :done)

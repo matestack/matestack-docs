@@ -1,8 +1,8 @@
 class Pages::Guides::Introduction < Page::Cell::Page
 
   def prepare
-    @title = "Hey mate!"
-    @sub_title = "Welcome to our documentation! Work in progess, stay tuned!"
+    @title = "Basemate: Escape the frontend hustle"
+    @sub_title = "Create maintainable, dynamic and beautiful UIs easily in pure Ruby"
 
     @comments = DemoComment.last(5)
   end
@@ -10,7 +10,6 @@ class Pages::Guides::Introduction < Page::Cell::Page
   def response
     components {
       page_header title: @title, sub_title: @sub_title
-      crazy
       row do
         col desktop: 8, offset: { desktop: 2 } do
           div class: "page-content" do
@@ -43,8 +42,10 @@ class Pages::Guides::Introduction < Page::Cell::Page
   def demo
     partial {
       div id: "tasks", dynamic: true, rerender_on: "comments_changed" do
-        @comments.each do |comment|
-          partial :comment_item, comment
+        ul class: "mdl-list" do
+          @comments.each do |comment|
+            partial :comment_item, comment
+          end
         end
       end
       partial :new_comment_form
@@ -53,10 +54,14 @@ class Pages::Guides::Introduction < Page::Cell::Page
 
   def comment_item comment
     partial {
-      div do
-        plain comment.content
+      li class: "mdl-list__item demo-list" do
+        span class: "mdl-list__item-primary-content" do
+          plain comment.content
+        end
         action delete_action_config(comment) do
-          plain "delete"
+          link class: "mdl-list__item-secondary-action", path:"#" do
+            icon class:"material-icons", text: "clear"
+          end
         end
       end
     }
@@ -67,10 +72,14 @@ class Pages::Guides::Introduction < Page::Cell::Page
       # define a form with the "form" core component
       # new_comment_form_config is a method returning the config
       form new_comment_form_config do
-        input type: :text, key: :content
-        submit do
-          # you can put all kinds of components here
-          button text: "create comment"
+        div class: "mdl-textfield mdl-js-textfield" do
+          input class: "mdl-textfield__input", type: :text, key: :content
+          label class: "mdl-textfield__label", text: "type comment and hint enter!"
+        end
+        div do
+          submit do
+            button class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored", text: "create comment"
+          end
         end
       end
     }
@@ -83,11 +92,7 @@ class Pages::Guides::Introduction < Page::Cell::Page
       # is expecting
       for: :comment,
       path: :create_comment_path,
-      method: :post,
-      # rerender component with id=tasks after success
-      success: {
-        tasks: :rerender
-      }
+      method: :post
     }
   end
 
@@ -95,11 +100,7 @@ class Pages::Guides::Introduction < Page::Cell::Page
     action_config = {
       path: :delete_comment_path,
       params: { id: comment.id },
-      method: :delete,
-      # rerender component with id=tasks after success
-      success: {
-        tasks: :rerender
-      }
+      method: :delete
     }
   end
 
