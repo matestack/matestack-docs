@@ -74,7 +74,7 @@ class Pages::Guides::Introduction < Page::Cell::Page
       form new_comment_form_config do
         div class: "mdl-textfield mdl-js-textfield" do
           input class: "mdl-textfield__input", type: :text, key: :content
-          label class: "mdl-textfield__label", text: "type comment and hint enter!"
+          label class: "mdl-textfield__label", text: "type comment and hit enter!"
         end
         div do
           submit do
