@@ -4,7 +4,7 @@ database should be updated and the task should be displayed gray and crossed out
 For this example we want to add a "not completed" button if the task is done in
 order to toggle the done state of each task.
 
-Frist of all we need our backend action:
+First of all we need our backend action:
 
 Your routes:
 
