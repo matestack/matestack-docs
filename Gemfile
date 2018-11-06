@@ -41,7 +41,7 @@ gem 'jbuilder', '~> 2.5'
 # otherwise the Gemfile.lock has a wrong version locked
 # gem 'basemate-ui-core', :path => './vendor/basemate-ui-core'
 # gem 'basemate-ui-core', :git => 'https://github.com/basemate/basemate-ui-core.git'
-gem 'basemate-ui-core', '~> 0.5.0'
+gem 'basemate-ui-core', '~> 0.5.1'
 
 # for markdown usage
 gem 'redcarpet'
