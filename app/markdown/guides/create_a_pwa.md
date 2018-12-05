@@ -1,4 +1,4 @@
-Use this gem: [rossta/serviceworker-rails](https://github.com/rossta/serviceworker-rails)
+Use this third party gem: [github.com/rossta/serviceworker-rails](https://github.com/rossta/serviceworker-rails)
 
 ## Installation
 

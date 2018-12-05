@@ -3,9 +3,9 @@ for this feature!
 
 Docs in progress here!
 
-## Creata a channel on the serverside
+## Create a channel on the serverside
 
-app/channels/basemate_ui_core_channel.rb
+app/channels/basemate\_ui\_core_channel.rb
 
 ```ruby
 class BasemateUiCoreChannel < ApplicationCable::Channel

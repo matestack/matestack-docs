@@ -16,43 +16,16 @@ Your migration:
 We run:
 
 ```shell
-rails g migration CreateTasks
+rails g model Task name:string done:boolean, validates: {:name, presence: true}
 ```
 
-db/migrate/xxx\_create_tasks.rb
+and in the migration add default false
 
 ```ruby
-class CreateTasks < ActiveRecord::Migration[5.2]
-  def change
-    create_table :tasks do |t|
-      t.string :name
-      t.boolean :done, default: false
-    end
-  end
-end
-
+  add_column :done, :boolean, default: false
 ```
 
-Your model:
-
-app/models/task.rb
-
-```ruby
-class Task < ApplicationRecord
-
-  validates :name, presence: true
-
-end
-```
-
-Now we run:
-
-```shell
-rake db:migrate
-```
-
-Ok, now we should have a empty Task table in our database. Let's add some seeds
-to fill the database Tasks:
+Add some tasks to our empty database:
 
 db/seeds.rb
 
@@ -64,11 +37,12 @@ Task.create([
 ])
 ```
 
-and run
+Now we run:
 
 ```shell
-rake db:seed
+rake db:migrate db:seed
 ```
+
 
 ## 2. Display all Tasks in a list
 
