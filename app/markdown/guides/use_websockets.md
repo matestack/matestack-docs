@@ -1,4 +1,4 @@
-Websockets can easily be integrated into basmate. basemate uses Rails ActionCable
+Websockets can easily be integrated into basemate. Basemate uses Rails ActionCable
 for this feature!
 
 Docs in progress here!
@@ -18,7 +18,7 @@ end
 
 ```
 
-## Add a Subscription on the clientside add link to basemate
+## Add a subscription on the clientside and add a link to basemate
 
 app/assets/javascripts/application.js
 

@@ -1,8 +1,8 @@
 A Single Page Application (SPA) usually is loaded once and handles all user
 interactions dynamically by calling backend APIs. This gives the user the
 ofted desired "app-feeling". Rails View Layer only offers the static request/response
-mode to render content. basemate fixes that without adding the complexity a
-SPA written in JavaScript usually brings with it. basemate's app instance simply
+mode to render content. Basemate fixes that without adding the complexity a
+SPA written in JavaScript usually brings with it. Basemate's app instance simply
 performs dynamic transitions between pages. You only have to follow the basic
 structure to get this running:
 
@@ -31,7 +31,7 @@ app/views/layouts/application.html.erb
   <%= yield %>
 </div>
 ```
-Note: Wrap your classic 'yield' with a div and assign the id  "basemate_ui"
+Note: Wrap your classic 'yield' with a div and assign the id "basemate_ui"
 
 Your Controller Actions:
 
@@ -95,11 +95,11 @@ class Pages::Website::AboutUs < Page::Cell::Page
 end
 ```
 
-Note: the page class name has to match the your folder structure and file name
+Note: The page class name has to match the folder structure and file name
 
 ## 2. Setup a basemate app
-Now we have to add a basemate app. An basemate app simply defines a layout and
-wraps multiple pages with it:
+Now we have to add a basemate app. A basemate app simply defines a layout and
+wraps multiple pages within itself:
 
 app/basemate/apps/website.rb
 
@@ -128,16 +128,16 @@ class Apps::Website < App::Cell::App
 end
 ```
 
-Note: the apps name has to match the namespace of you basemate page:
+Note: The app's name has to match the namespace of your basemate page:
 
 - Pages::**Website**::Home
 - Pages::**Website**::AboutUs
 
-Clicking on the transition links will perform dynamic transition and change the
-content without a full page reload.
+Clicking on the transition links will perform a dynamic transition and change the
+content without doing a full page reload.
 
-You can see this in action when navigating through this guides. The links on the
-sidebar of these docs are transition components.
+You can see this in action when navigating through our guides. The links on the
+sidebar of the doc articles are transition components.
 
 ## Summary
 

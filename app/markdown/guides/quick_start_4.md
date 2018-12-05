@@ -1,7 +1,7 @@
 ## 5. Add an inline edit form for each Task
 We want to be able to edit a Task inline. Therefore we want to click on a Task's
 name and expect a input to appear. After modifying the value and defocussing the
-the input, we want the value to be saved to the database. basemate has a core
+the input, we want the value to be saved to the database. Basemate has a core
 component for that:
 
 Your basemate page:

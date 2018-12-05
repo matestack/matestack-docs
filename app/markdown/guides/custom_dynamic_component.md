@@ -1,7 +1,7 @@
 Dynamic components are rendered to HTML on the serverside and transferred
 to the browser. In contrast to static components, they are wrapped in a special
-HTML tag and shipped with a Vue.js component JS. Thanks to Vue.js they can perform
-all kinds of clientside actions such as call an API on a specific user interaction.
+HTML tag and shipped with a Vue.js component JS. Thanks to Vue.js, they can perform
+all kinds of clientside actions, such as API calls on a specific user interaction.
 
 To create your own custom dynamic component, you only have to follow these basic steps:
 
@@ -119,7 +119,7 @@ app/assets/javascripts/application.js
 
 ```
 
-and therefore add once:
+and register the route once:
 
 config/initializers/assets.rb
 

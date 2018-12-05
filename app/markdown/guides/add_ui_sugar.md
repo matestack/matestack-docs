@@ -1,5 +1,5 @@
 On the previous guides we learned, how to implement dynamic pages and apps in pure
-Ruby. basemate wants to cover the basic dynamic behaviour of your Web-App with
+Ruby. Basemate wants to cover the basic dynamic behaviour of your Web-App with
 minimum complexity. You should be able to add custom UI Goodies on top of this
 solid structure though. To give you maximum flexibility, you can use classic JavaScript
 for that.

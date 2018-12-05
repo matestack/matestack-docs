@@ -188,7 +188,7 @@ Vue.js component in order to perform clientside logic.
 
 basemate renders HTML on the serverside and wraps dynamic components with a special
 component tag. Vue.js compiles this HTML and mounts Vue.js components on top of it.
-**These Vue.js components do whatever a Vue.js component can do. basemate doesn't
+**These Vue.js components do whatever a Vue.js component can do. Basemate doesn't
 limit Vue.js functionality.** This is especially important for developers, who want
 to create their own dynamic components.
 

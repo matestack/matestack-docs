@@ -1,11 +1,11 @@
-basemate makes Rails UI-Development easier, more robust and fun. basemate can be
+basemate makes Rails UI-Development easier, more robust and fun. Basemate can be
 used in static request/response mode or dynamic SPA mode. Actually, basemate enables
 you to create a dynamic SPA with minimum effort, but that's optional.
 
 On this page we begin with static features and show you, how your static frontend
 development gets easier. After covering these benefits, we start to show you, how
 easy it is, to add dynamic features, getting the "app-feeling" we are all looking
-for. basemate is using pure vue.js for it's dynamic features, but you might never
+for. Basemate is using pure vue.js for it's dynamic features, but you might never
 see it, unless you wanna build your own dynamic components.
 
 So be patient, we start pretty basic and add more and more juice with each step!
@@ -146,7 +146,7 @@ module Pages
 
     def response
       components {
-        card title: "Welcome", primary_action: "Get Started", menu_items: ["share"]  do
+        card title: "Welcome", primary_action: "Get Started", menu_items: ["share"] do
           plain "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
         end
       }
@@ -172,7 +172,7 @@ module Components
           partial :content
           partial :actions
           partial :menu
-        end   
+        end
       }
     end
 
