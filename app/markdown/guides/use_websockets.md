@@ -3,7 +3,7 @@ for this feature!
 
 Docs in progress here!
 
-## Creata a Channel on the serverside
+## Creata a channel on the serverside
 
 app/channels/basemate_ui_core_channel.rb
 
