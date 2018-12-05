@@ -49,6 +49,9 @@ module Apps
               plain "Diving Deeper"
             end
             partial :transition_link, :guides_path, { key: "custom_static_component" }, "Custom static component"
+            partial :transition_link, :guides_path, { key: "custom_dynamic_component" }, "Custom dynamic component"
+            partial :transition_link, :guides_path, { key: "use_websockets" }, "Use websockets"
+            partial :transition_link, :guides_path, { key: "create_a_pwa" }, "Create a PWA"
             # partial :transition_link, :motivation_path, "Why basemate?"
             # partial :transition_link, :installation_path, "Installation"
             # partial :transition_link, :basic_concepts_path, "Basic Concepts"

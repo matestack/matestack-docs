@@ -5,7 +5,7 @@ module Components
       def col_classes
         classes = []
 
-        classes << "col"
+        classes << "mdl-cell--12-col"
         classes << options[:class]
         classes << "mdl-cell--#{options[:desktop]}-col-desktop" unless options[:desktop].nil?
         classes << "mdl-cell--#{options[:tablet]}-col-tablet" unless options[:tablet].nil?

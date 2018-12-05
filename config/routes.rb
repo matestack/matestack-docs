@@ -26,13 +26,18 @@ Rails.application.routes.draw do
   end
 
   scope :api do
+
+    get "users", to: 'api#users'
     delete "demo_user/:id", to: 'api#delete_demo_user', as: "delete_demo_user"
     post "demo_user", to: 'api#create_demo_user', as: "create_demo_user"
 
     put '/tasks/:id', to: 'api#update_task', as: 'update_task'
     post '/tasks', to: 'api#create_task', as: 'create_task'
+
+    post '/comments', to: 'api#create_comment', as: 'create_comment'
+    delete "comments/:id", to: 'api#delete_comment', as: "delete_comment"
   end
 
-  get "/test", to: 'test#test'
+  get "/paper", to: 'guides#paper'
 
 end

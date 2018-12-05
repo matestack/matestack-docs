@@ -47,13 +47,13 @@ GEM
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
-    basemate-ui-core (0.4.0)
+    basemate-ui-core (0.5.1)
       cells-haml
       cells-rails
       rails (>= 5.0.0)
       trailblazer
       trailblazer-cells
-      trailblazer-rails
+      trailblazer-rails (= 1.0.9)
     bindex (0.5.0)
     builder (3.2.3)
     byebug (10.0.2)
@@ -204,6 +204,8 @@ GEM
     selenium-webdriver (3.14.1)
       childprocess (~> 0.5)
       rubyzip (~> 1.2, >= 1.2.2)
+    serviceworker-rails (0.5.5)
+      railties (>= 3.1)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -264,7 +266,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  basemate-ui-core (~> 0.4.0)
+  basemate-ui-core (~> 0.5.1)
   byebug
   capybara (>= 2.15)
   chromedriver-helper
@@ -280,6 +282,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   scout_apm
   selenium-webdriver
+  serviceworker-rails
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
@@ -291,4 +294,4 @@ RUBY VERSION
    ruby 2.5.0p0
 
 BUNDLED WITH
-   1.16.6
+   1.17.1

@@ -41,7 +41,7 @@ gem 'jbuilder', '~> 2.5'
 # otherwise the Gemfile.lock has a wrong version locked
 # gem 'basemate-ui-core', :path => './vendor/basemate-ui-core'
 # gem 'basemate-ui-core', :git => 'https://github.com/basemate/basemate-ui-core.git'
-gem 'basemate-ui-core', '~> 0.4.0'
+gem 'basemate-ui-core', '~> 0.5.1'
 
 # for markdown usage
 gem 'redcarpet'
@@ -54,6 +54,9 @@ gem 'scout_apm'
 
 # for performance monitoring
 gem 'rack-mini-profiler'
+
+# for pwa support
+gem 'serviceworker-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

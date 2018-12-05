@@ -86,11 +86,11 @@ returns
 ```
 
 ## Example 4
-This example renders a link with a get request to the **root_path/about** within your Rails application.
+This example renders a link with a get request to the **root_path** within your Rails application.
 
 ```ruby
 div id: "foo", class: "bar" do
-  link path: :root_path, params: { key: :about } do
+  link path: :root_path do
     plain "Here"
   end
 end
@@ -100,7 +100,7 @@ returns
 
 ```html
 <div id="foo" class="bar">
-  <a data-method="get" href="/?key=about">
+  <a data-method="get" href="/">
     Here
   </a>
 </div>
