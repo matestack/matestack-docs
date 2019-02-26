@@ -45,9 +45,9 @@ class Pages::Comments::List < Page::Cell::Page
   # the response clean
   def new_comment_form
     partial {
-      form new_comment_form_config do
-        input type: :text, key: :content
-        submit do
+      form new_comment_form_config, :include do
+        form_input type: :text, key: :content
+        form_submit do
           button text: "create"
         end
       end

@@ -1,8 +1,8 @@
 class Pages::Guides::CreateADynamicUi < Page::Cell::Page
 
   def prepare
-    @title = "Create a dynamic UI"
-    @sub_title = "Use pure Ruby to define a dynamic Todo-List"
+    @title = "Sorry"
+    @sub_title = "Docs under construction"
 
     @tasks = DemoTask.last(5)
   end
@@ -13,51 +13,51 @@ class Pages::Guides::CreateADynamicUi < Page::Cell::Page
       row do
         col desktop: 8, offset: { desktop: 2 } do
           div class: "page-content" do
-            row do
-              col do
-                md path: "markdown/guides/quick_start_1"
-              end
-            end
-            row class: "demo-area" do
-              col do
-                partial :demo_1
-              end
-            end
-            row do
-              col do
-                md path: "markdown/guides/quick_start_2"
-              end
-            end
-            row class: "demo-area" do
-              col do
-                partial :demo_2
-              end
-            end
-            row do
-              col do
-                md path: "markdown/guides/quick_start_3"
-              end
-            end
-            row class: "demo-area" do
-              col do
-                partial :demo_3
-              end
-            end
-            row do
-              col do
-                md path: "markdown/guides/quick_start_4"
-              end
-            end
-            row class: "demo-area" do
-              col do
-                partial :demo_4
-              end
-            end
-            row do
-              col do
-                md path: "markdown/guides/quick_start_5"
-              end
-            end
+            # row do
+            #   col do
+            #     md path: "markdown/guides/quick_start_1"
+            #   end
+            # end
+            # row class: "demo-area" do
+            #   col do
+            #     partial :demo_1
+            #   end
+            # end
+            # row do
+            #   col do
+            #     md path: "markdown/guides/quick_start_2"
+            #   end
+            # end
+            # row class: "demo-area" do
+            #   col do
+            #     partial :demo_2
+            #   end
+            # end
+            # row do
+            #   col do
+            #     md path: "markdown/guides/quick_start_3"
+            #   end
+            # end
+            # row class: "demo-area" do
+            #   col do
+            #     partial :demo_3
+            #   end
+            # end
+            # row do
+            #   col do
+            #     md path: "markdown/guides/quick_start_4"
+            #   end
+            # end
+            # row class: "demo-area" do
+            #   col do
+            #     partial :demo_4
+            #   end
+            # end
+            # row do
+            #   col do
+            #     md path: "markdown/guides/quick_start_5"
+            #   end
+            # end
           end
         end
       end
