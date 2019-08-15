@@ -83,8 +83,8 @@ and add:
 
 // the Vue.js component has to be called like your ruby component + "-cell"
 // in this case: "custom-cell"
-BasemateUiCore.Vue.component('custom-cell', {
-  mixins: [BasemateUiCore.componentMixin],
+MatestackUiCore.Vue.component('custom-cell', {
+  mixins: [MatestackUiCore.componentMixin],
   data: function data() {
     return {
       users: []
@@ -93,7 +93,7 @@ BasemateUiCore.Vue.component('custom-cell', {
   methods: {
     callApi: function() {
       var self = this;
-      BasemateUiCore.axios.get("/api/users.json")
+      MatestackUiCore.axios.get("/api/users.json")
       .then(function(response){
         self.users = response.data;
       });

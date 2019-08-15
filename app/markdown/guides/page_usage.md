@@ -1,6 +1,6 @@
 ## Table of Contents
 
-- [Basemate Page](#basemate-page)
+- [Matestack Page](#basemate-page)
   - [Setup](#basic-page-setup)
   - [Partials](#structure-your-basemate-page-response-with-partials)
   - [Prepare Block](#use-the-prepare-method-to-implement-page-related-business-logic)
@@ -42,7 +42,7 @@ class WebsiteController < ApplicationController
   def home
     @foo = "foo"
     @bar = "bar"
-    responder_for(Pages::Website::Home) #-> Basemate::Ui::Core::ApplicationHelper
+    responder_for(Pages::Website::Home) #-> Matestack::Ui::Core::ApplicationHelper
   end
 
 end
@@ -217,7 +217,7 @@ end
 ### Use the Prepare method to implement page-related business logic
 
 If you want to move code out of your controller action, you could place your
-page-related business logic in the 'prepare'-method of your Basemate Page.
+page-related business logic in the 'prepare'-method of your Matestack Page.
 
 
 app/controllers/website_controller.rb

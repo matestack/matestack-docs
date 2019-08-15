@@ -40,7 +40,7 @@ app/controllers/tasks_controller.rb
 ```ruby
 class WebsiteController < ApplicationController
 
-  include Basemate::Ui::Core::ApplicationHelper
+  include Matestack::Ui::Core::ApplicationHelper
 
   def home
     # use a basemate page as response

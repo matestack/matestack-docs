@@ -1,4 +1,4 @@
-var basemateUiCoreActionSuccess = function(response){
+var matestackUiCoreActionSuccess = function(response){
   setTimeout(function () {
     var noticebarContainer = document.querySelector('#notice_bar');
     var data = {message: JSON.stringify(response.data.message), timeout: 3000};
@@ -6,7 +6,7 @@ var basemateUiCoreActionSuccess = function(response){
   }, 500);
 }
 
-var basemateUiCoreActionError = function(error){
+var matestackUiCoreActionError = function(error){
   setTimeout(function () {
     var alertbarContainer = document.querySelector('#alert_bar');
     var data = {message: JSON.stringify(error.response.data.message), timeout: 3000};

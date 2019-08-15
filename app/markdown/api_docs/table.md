@@ -23,7 +23,7 @@ Implementing a simple, hard coded table.
 table class: "foo" do
   tr class: "bar" do
     th text: "First"
-    th text: "Basemate"
+    th text: "Matestack"
     th text: "Table"
   end
   tr do
@@ -45,7 +45,7 @@ returns
 <table class="foo">
   <tr class="bar">
     <th>First</th>
-    <th>Basemate</th>
+    <th>Matestack</th>
     <th>Table</th>
   </tr>
   <tr>

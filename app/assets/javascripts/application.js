@@ -13,16 +13,15 @@
 //= require activestorage
 //= require cable
 //= require material.min
-//= require basemate-ui-core
+//= require matestack-ui-core
 //= require serviceworker-companion
 
 //= require transition-callbacks
 //= require action-callbacks
 
-//= require crazy/js/crazy
 
-App.cable.subscriptions.create("BasemateUiCoreChannel", {
+App.cable.subscriptions.create("MatestackUiCoreChannel", {
   received(data) {
-    BasemateUiCore.basemateEventHub.$emit('BasemateUiCoreChannel', data)
+    MatestackUiCore.matestackEventHub.$emit('MatestackUiCoreChannel', data)
   }
 });

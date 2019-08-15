@@ -1,4 +1,4 @@
-# Basemate: Escape the frontend hustle
+# Matestack: Escape the frontend hustle
 #### Create maintainable, dynamic and beautiful UIs easily
 
 basemate melts Rails and Vue.js down to one holistic Web Dev Framework.
@@ -169,7 +169,7 @@ renders HTML which is then transferred to the browser.
 ```ruby
 class CommentsController < ApplicationController
 
-  include Basemate::Ui::Core::ApplicationHelper
+  include Matestack::Ui::Core::ApplicationHelper
 
   def list
     # use a basemate page as response

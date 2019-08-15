@@ -110,7 +110,7 @@ class ApiController < ApplicationController
   protected
 
   def broadcast
-    ActionCable.server.broadcast("basemate_ui_core", {
+    ActionCable.server.broadcast("matestack_ui_core", {
       message: "comments_changed"
     })
   end
@@ -141,7 +141,7 @@ renders HTML which is then transferred to the browser.
 ```ruby
 class CommentsController < ApplicationController
 
-  include Basemate::Ui::Core::ApplicationHelper
+  include Matestack::Ui::Core::ApplicationHelper
 
   def list
     # use a basemate page as response

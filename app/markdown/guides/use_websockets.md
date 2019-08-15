@@ -5,13 +5,13 @@ Docs in progress here!
 
 ## Creata a Channel on the serverside
 
-app/channels/basemate_ui_core_channel.rb
+app/channels/matestack_ui_core_channel.rb
 
 ```ruby
-class BasemateUiCoreChannel < ApplicationCable::Channel
+class MatestackUiCoreChannel < ApplicationCable::Channel
 
   def subscribed
-    stream_from "basemate_ui_core"
+    stream_from "matestack_ui_core"
   end
 
 end
@@ -27,9 +27,9 @@ app/assets/javascripts/application.js
 //= require cable
 //= require basemate-ui-core
 
-App.cable.subscriptions.create("BasemateUiCoreChannel", {
+App.cable.subscriptions.create("MatestackUiCoreChannel", {
   received(data) {
-    BasemateUiCore.basemateEventHub.$emit('BasemateUiCoreChannel', data)
+    MatestackUiCore.basemateEventHub.$emit('MatestackUiCoreChannel', data)
   }
 });
 
@@ -79,7 +79,7 @@ end
 protected
 
 def broadcast
-  ActionCable.server.broadcast("basemate_ui_core", {
+  ActionCable.server.broadcast("matestack_ui_core", {
     message: "comments_changed"
   })
 end

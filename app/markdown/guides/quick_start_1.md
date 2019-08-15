@@ -103,7 +103,7 @@ app/controllers/tasks_controller.rb
 ```ruby
 class TasksController < ApplicationController
 
-  include Basemate::Ui::Core::ApplicationHelper
+  include Matestack::Ui::Core::ApplicationHelper
 
   def list
     # use a basemate page as response

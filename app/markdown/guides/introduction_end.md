@@ -15,5 +15,5 @@ wait to start :)
 - Prepare stable release
 
 ## License
-Basemate UI Core is available as open source under the terms of the
+Matestack UI Core is available as open source under the terms of the
 [MIT License](https://opensource.org/licenses/MIT).

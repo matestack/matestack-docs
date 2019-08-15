@@ -1,10 +1,8 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.0'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.1'
+gem 'rails', '~> 5.2.2'
 # Use pg as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -41,16 +39,13 @@ gem 'jbuilder', '~> 2.5'
 # otherwise the Gemfile.lock has a wrong version locked
 # gem 'basemate-ui-core', :path => './vendor/basemate-ui-core'
 # gem 'basemate-ui-core', :git => 'https://github.com/basemate/basemate-ui-core.git'
-gem 'basemate-ui-core', '~> 0.5.1'
+gem 'matestack-ui-core', '~> 0.7.0'
 
 # for markdown usage
 gem 'redcarpet'
 
 # for syntax highlighting
 gem 'rouge'
-
-# for monitoring
-gem 'scout_apm'
 
 # for performance monitoring
 gem 'rack-mini-profiler'

@@ -27,7 +27,7 @@ Require 'basemate-ui-core' in your assets/javascript/application.js
 //= require basemate-ui-core
 ```
 
-### Basemate Folder
+### Matestack Folder
 
 Create a folder called 'basemate' in your app directory. All your basemate apps,
 pages, components (and more to come) will be defined there.
@@ -41,6 +41,6 @@ app/controllers/application_controller.rb
 
 ```ruby
 class ApplicationController < ActionController::Base
-  include Basemate::Ui::Core::ApplicationHelper
+  include Matestack::Ui::Core::ApplicationHelper
 end
 ```
