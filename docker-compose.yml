@@ -1,0 +1,33 @@
+version: '3'
+services:
+
+  postgres:
+    image: registry.gitlab.com/basemate-ops/workflow/postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: development
+    volumes:
+      - data-volume:/var/lib/postgresql/data
+
+  rails:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.dev
+    ports:
+      - "3000:3000"
+    links:
+      - postgres
+    environment:
+      RAILS_ENV: development
+    volumes:
+      - ./:/app
+      - gem-volume:/usr/local/bundle
+      - node-volume:/app/node_modules
+    command: "rails server --binding 0.0.0.0 --port 3000"
+
+
+volumes:
+  data-volume:
+  gem-volume:
+  node-volume:
