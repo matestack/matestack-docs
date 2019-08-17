@@ -1,15 +1,9 @@
 class GuidesController < ApplicationController
 
-  layout "guides"
+  layout "docs"
 
   def resolve
-    page_class = Object.const_get("Pages::Guides::#{params[:key].camelcase}")
-
-    responder_for(page_class)
-  end
-
-  def paper
-    responder_for(Pages::Paper)
+    responder_for(Pages::Guides::GithubDoc)
   end
 
 

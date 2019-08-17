@@ -7,8 +7,8 @@ header{
 
 .header__logo {
   img{
-    height: 21px;
-    margin-top: 5px;
+    height: 40px;
+    margin-top: -6px;
   }
 }
 
@@ -44,6 +44,15 @@ header{
 
 .header__link{
   padding-left: 10px;
+  &.active{
+    .mdl-button{
+      border-bottom: 5px solid $basemate-color-red;
+    }
+  }
+  .mdl-button{
+    border-bottom: 5px solid white;
+  }
+
 }
 
 .mobile-header__logo{
