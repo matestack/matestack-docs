@@ -12,5 +12,5 @@ Rails.application.config.assets.paths << Rails.root.join('app/basemate/component
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-Rails.application.config.assets.precompile += %w( application.js application.scss )
+Rails.application.config.assets.precompile += %w( application.js application.scss landingpage.scss)
 Rails.configuration.assets.precompile += %w[serviceworker.js manifest.json]

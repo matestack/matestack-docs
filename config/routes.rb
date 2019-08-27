@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
-  root to: redirect('/docs/install')
+  root to: 'landingpage#home'
+
+  get 'imprint', to: 'landingpage#imprint'
+  get 'privacy', to: 'landingpage#privacy'
 
   scope :docs do
     get '/components/*key', to: 'components#resolve', as: "components"
     get '/*key', to: 'docs#resolve', as: "docs"
   end
-
 
   scope :spec do
     get '/*key', to: 'spec#resolve', as: "spec"
