@@ -2,40 +2,53 @@ en:
   landingpage:
     hero:
       headline: "Rapidly create interactive UIs in pure Ruby"
-      subheadline: "Escape the frontend Hustle. Plug into Rails. Extend with Vue.js"
+      subheadline: "Escape the frontend Hustle // Plug into Rails // Extend with Vue.js"
       button_one: "Learn more"
       button_two: "Getting Started"
+    summary:
+      fullstack_ruby:
+        headline: "Fullstack Ruby"
+        text: "Use your favorite language to create both backend logic and reusable frontend components."
+      enhanced_maintainability:
+        headline: "Enhanced Maintainability"
+        text: "Greatly reduce the complexity in your codebase - less potential for bugs and more shipped features."
+      no_code_generator:
+        headline: "Not a code generator"
+        text: "Unlike similar projects, we neither use Opal nor generate JavaScript boilerplate code from Ruby definitions."
+      # open_source:
+      #   headline: "Open Source"
+      #   text: "Transparent communication, the MIT Licence and an active community have your back, no matter what."
     why:
-      headline: "Matestacks Why: Simplify Web Application Development"
-      text: "In order to create dynamic 'app-like' web applications, we started to create fullblown Javascript applications and reduced Rails to a pure JSON API. Using this common approach, compared to the classic single-repo MVC structure, we increased the complexity in our development by introducing a separate full-blown frontend framework. Implementing two separate systems (backend-api, frontent-app) is a pain: Two different code bases, two repositories to maintain, two different deployment schedules, two test environments, two everything...! And than add native app development for iOS and Android and probably a fancy microservice-oriented backend architecture on top of that! Beeing a small dev team, we decided not to adopt this modern web development complexity and decided to create... matestack!"
+      headline: "Matestack's Why: Simplify Web Application Development"
+      text: "In order to create dynamic, 'app-like' web applications, developers started to create fullblown Javascript applications and reduced Rails to a pure JSON API. Using this common approach, compared to the classic single-repo MVC structure, we increased the complexity in our development by introducing a separate full-blown frontend framework. Implementing two separate systems (backend-api, frontent-app) is a pain: Two different code bases, two repositories to maintain, two different deployment schedules, two test environments, two everything...! And than add native app development for iOS and Android and probably a fancy microservice-oriented backend architecture on top of that! Beeing a small dev team, we decided not to adopt this modern web development complexity and decided to create... matestack!"
       text_2: "Matestack merges the back- and frontend-layer and automates the data flow between those two. On average, we write 50% less code, are much faster in our development, suffer less cognetive load, onboard junior devs way faster and simply have way more fun. Thanks to the reality-proven flexible architecture, we don't loose any possibility to extend our systems on the back or frontend. It's just Ruby and Vue.js!"
     plug_into_rails:
       headline: "Plug into Rails"
-      text: "Matestack is designed as an alternative the classic Rails view layer. All other concepts of Rails stay untouched. A HTTP request is processed the classic \"Rails way\". Inside a controller action, you can add a matestack helper, referencing a matestack page class. A matestack page consists of multiple components and is written in pure Ruby, as seen on the next section. Using Trailblazer's \"Cell\" concept, the matestack page renders HTML which is then transferred to the browser. Within the browser, pure Vue.js takes care of optional dynamic behaviour."
+      text: "Matestack is designed as an alternative to the classic Rails view layer. All other concepts of Rails remain untouched. A HTTP request is processed the classic \"Rails way\". Inside a controller action, you can add a matestack helper, referencing a matestack page class. A matestack page consists of multiple components and is written in pure Ruby, as seen on the next section. Using Trailblazer's \"Cell\" concept, the matestack page renders HTML which is then transferred to the browser. Within the browser, pure Vue.js takes care of optional dynamic behaviour."
     ruby_classes:
       headline: "Create UIs in Ruby Classes"
-      text: "Matestacks UI concept consists of three major building blocks: \"component\" (reusable UI element), \"page\" (something like the classic view) and \"app\" (something like the classic layout). Pages, component and apps are pure Ruby classes defining the UI through a response method."
+      text: "Matestacks UI concept consists of three major building blocks: \"Component\" (reusable UI element), \"page\" (equivalent to a classic view) and \"app\" (used similarly to the classic layout). Pages, components and apps are pure Ruby classes defining the UI through a response method."
     spa_without_js:
       headline: "Create a Single Page Application without Javascript"
-      text: "A Single Page Application (SPA) usually is loaded once and handles all user interactions dynamically by calling backend APIs. This gives the user the ofted desired \"app-feeling\". Rails View Layer only offers the static request/response mode to render content. matestack fixes that without adding the complexity a SPA written in JavaScript usually brings with it. matestacks dynamic core component 'transition' simply performs dynamic transitions between pages without full page reload, if wrapped by an app layout. You only have to create multiple pages and add the 'transition' components to their app"
+      text: "A Single Page Application (SPA) usually is loaded once and handles all user interactions dynamically by calling backend APIs. This gives the user the ofted desired \"app-feeling\". In contrast, the Rails View Layer only offers the static request/response mode to render content. Matestack fixes that without adding the complexity that a SPA written in JavaScript usually brings with itself. Matestack's dynamic 'transition' core component simply performs dynamic transitions between pages without full page reload, given that both pages are wrapped by the same app layout. You only have to create multiple pages and add the 'transition' components to their app like so:"
     interaction_without_js:
       headline: "Handle User Interactions without Javascript"
       text: "We love to add dynamic behaviour to our UIs. But we don't enjoy adding Javascript again and again if we want something to react dynamically on client-side events. That's why we've created a library of dynamic components handling these clientside dynamics for us. We just tell them what to do in our Ruby classes."
     custom_components:
       headline: "Create custom Components"
-      text: "We've talked a lot about matestacks core components. But what about creating your own ones? Identify recurring elements on your UI and put them into a custom component. Defined once, you can use them across your hole UI and reduce A LOT OF repeated markup code! Trust us, this is fun!"
+      text: "We've talked a lot about matestacks core components. But what about creating your own ones? It's quite straightforward. After you have identified recurring elements on your UI, you put them into a custom component. Defined once, you can use them across all your UI and reduce A LOT OF repeated markup code! Trust us, this is fun! Below, you can see an example of a custom component and its usage to avoid markup repetition:"
     extend_with_vue:
       headline: "Extend with Vue.js"
-      text: "And what about some custom dynamic behaviour? No problem: Just create your own dynamic components with your own Vue.js code on top and use them right next to all other components. Sharing an Vue.js event bus, you can even communicate with all other components, or simply do whatever you want to do. There are actually no limits!"
+      text: "And what about some custom dynamic behaviour? No problem: Just create your own dynamic components with your own Vue.js code on top and use them right next to all other components. Sharing an Vue.js event bus, you can even communicate with all other components, or simply do whatever you want to do. In the end, it's just Rails and Vue.js, so there are no limits!"
     getting_started:
-      headline: Saw enough?
+      headline: "You've seen enough?"
       text: Check out the documentation and start right away
-      button_one: "Getting Started"
+      button_one: "Get Started"
       path: "docs_path"
       params:
         key: "install"
     team:
-      headline: 'A growing team of core contributors improve matestack every day<br/> Become one of them!'
+      headline: 'A growing team of core contributors improves matestack every day<br/> Become one of them!'
     os:
       community_driven:
         headline: "Community-driven"
@@ -45,9 +58,9 @@ en:
         text: "Test driven development and throughout documentation are most important to us. We aim for full test coverage. If something breaks, our CI will let us know!"
       contributor_friendly:
         headline: "Contributor-friendly"
-        text: "We welcome contributors of every kind. Junior or senior level..it doesn't matter. Now is the best time to get involved and have real impact!"
+        text: "We welcome contributors of every kind. Junior or senior level - it doesn't matter. Now is the best time to get involved and have real impact!"
     gitter:
       headline: "Say Hello!"
-      text: "Jump into our Gitter Chat and let us know if you have any issues, have a feature request or want to join the community!"
+      text: "Jump into our Gitter Chat and let us know if you face any issues, have a feature request or want to join the community!"
       button_one: "Gitter Chat"
       link: "https://gitter.im/basemate/community"

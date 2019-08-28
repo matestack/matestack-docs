@@ -17,7 +17,7 @@ class Apps::MyApp < Matestack::Ui::App
         end
       end
       main do
-        page_content #pages are dynamically yielded here, when buttons are clicked!
+        page_content # pages are dynamically yielded here when buttons are clicked!
       end
       footer do
         plain "That's it!"
