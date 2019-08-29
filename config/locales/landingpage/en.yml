@@ -64,3 +64,56 @@ en:
       text: "Jump into our Gitter Chat and let us know if you face any issues, have a feature request or want to join the community!"
       button_one: "Gitter Chat"
       link: "https://gitter.im/basemate/community"
+  challenge:
+    hero:
+      headline: "Win a free ticket to the Ruby Conference Thailand 2019"
+      subheadline: "Use matestack, publish your project and receive our spare ticket!"
+      button_one: "Learn more"
+    details:
+      headline: "Details"
+      text: "We, as one of the sponsors of this year's RubyConfTh, have one spare ticket left and want to invite someone to come with us - here's the deal:"
+      text_1: "Whoever <b>creates the best Rails app using matestack</b> or <b>makes the most meaningful contributions</b> by Sunday night receives said ticket!"
+      text_2: "The winner gets picked by our core team right after the deadline is over. The winner gets notified via email and announced via Twitter. Bonus points for creativity and deployed applications (e.g. free heroku tier)."
+      summary:
+        challenge:
+          headline: "The Challenge"
+          text: "Make the <b>best use of</b> or <b>most meaningful contributions to</b> our gem 'matestack-ui-core'."
+        deadline:
+          headline: "The Deadline"
+          text: "1st of September 2019, 12:00 AM Asia/Bangkok (UTC+7)."
+        prize:
+          headline: "The Prize"
+          text: "One free ticket to RubyConfTh 2019 for the winner. No more, no less."
+    faq:
+      headline: "FAQ"
+      questions:
+        - question: "Who can participate in the challenge?"
+          answer: "You. Seriously. Why should we exclude someone?<br/> Make the best use of our gem 'matestack-ui-core' by creating an example application.<br/> Or browse open issues and contribute to the project."
+        - question: "What counts as submissions towards the challenge?"
+          answer: "All public GitHub projects created by as well as pull requests and issues opened by the same GitHub user. Make sure that your GitHub projects <a href='https://github.com/basemate/matestack-ui-core/network/dependents?package_id=UGFja2FnZS00MTQ2NDgxMjU%3D' target='_blank'>publicly use our gem</a>. Issues and pull requests count if they have been opened between the 28th of August 2019 and the deadline on the 1st of September 2019, both 12:00 AM Asia/Bangkok (UTC+7)."
+        - question: "Are there restrictions to what I can/should build"
+          answer: 'Yes. Stay within the <a href="https://rubyonrails.org/conduct/" target="_blank">Rails Contribution Guidelines</a>. Reach out to us if you are unsure about your idea.'
+        - question: "Is there reimbursement for travel and accommodation?"
+          answer: "Sadly, we do not have the possibility to reimburse travel or accommodation expenses."
+        - question: "Do projects or contributions count higher?"
+          answer: "We will see. In the end, the matestack core team will also count in other factors such as creativity and diversity.<br/> But this shouldn't stop you from taking part!"
+    getting_started:
+      headline: "Ready to get going?"
+      text: Check out the repo and start right away
+      button_one: "Go to GitHub"
+      link: "https://github.com/basemate/matestack-ui-core"
+    questions:
+      headline: "Anything unclear?"
+      text: Reach out to us if any open questions remain!
+      button_one: "Drop us a line"
+      link: "mailto:info@matestack.org"
+    # summary:
+    #   diversity:
+    #     headline: "Diversity first"
+    #     text: "In favor of a diverse community, we will prefer submissions from members of underrepresented groups in tech."
+    #   contribution_matters:
+    #     headline: "Every contribution matters"
+    #     text: "You have no idea for a matestack project? You can also take part in the challenge by opening PRs or (meaningful) tickets!"
+    #   ticket_only:
+    #     headline: "Conference ticket only"
+    #     text: "Sadly, we do not have the possibility to reimburse travel or accommodation expenses."

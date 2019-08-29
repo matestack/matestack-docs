@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'landingpage#home'
 
+  get 'bangkok_challenge', to: 'landingpage#rubyconfth'
   get 'imprint', to: 'landingpage#imprint'
   get 'privacy', to: 'landingpage#privacy'
 
