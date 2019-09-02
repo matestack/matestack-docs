@@ -11,10 +11,10 @@ en:
         text: "Use your favorite language to create both backend logic and reusable frontend components."
       enhanced_maintainability:
         headline: "Enhanced Maintainability"
-        text: "Greatly reduce the complexity in your codebase - less potential for bugs and more shipped features."
+        text: "Greatly reduce the complexity in your codebase - less potential for bugs and more time for shipping features."
       no_code_generator:
-        headline: "Not a code generator"
-        text: "Unlike similar projects, we neither use Opal nor generate JavaScript boilerplate code from Ruby definitions."
+        headline: "Not a Code Generator"
+        text: "Unlike similar projects, we neither use Opal nor one-time-generate JavaScript/HTML code."
       # open_source:
       #   headline: "Open Source"
       #   text: "Transparent communication, the MIT Licence and an active community have your back, no matter what."
