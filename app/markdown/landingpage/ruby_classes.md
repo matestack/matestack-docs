@@ -32,7 +32,7 @@ class Pages::MyApp::MyFirstPage < Matestack::Ui::Page
 end
 ```
 
-Like the classic view layer, a page (view) gets normally yielded in an app (layout): 
+Like the classic view layer, a page (view) gets normally yielded in an app (layout):
 
 `app/matestack/apps/my_app.rb`
 
@@ -45,7 +45,7 @@ class Apps::MyApp < Matestack::Ui::App
         heading size: 1, text: "My App"
       end
       main do
-        page_content # page get yielded here!
+        page_content # page gets yielded here!
       end
       footer do
         plain "That's it!"

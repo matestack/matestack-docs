@@ -6,6 +6,10 @@ class LandingpageController < ApplicationController
     responder_for(Pages::Landingpage::Home)
   end
 
+  def rubyconfth
+    responder_for(Pages::Landingpage::Rubyconfth)
+  end
+
   def imprint
     responder_for(Pages::Landingpage::Imprint)
   end

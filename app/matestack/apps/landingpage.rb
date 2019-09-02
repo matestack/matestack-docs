@@ -31,7 +31,7 @@ class Apps::Landingpage < Matestack::Ui::App
                       end
                       li do
                         link path: :docs_path, params: {key: 'install'}, class: "btn btn-main nav-button" do
-                          plain "Getting Started"
+                          plain "Get started"
                         end
                       end
                     end

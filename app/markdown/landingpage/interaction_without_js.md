@@ -1,6 +1,6 @@
-Below you see a page rendering a form and a list of the latest 5 instances of an Active Record model 'MyModel'. When the form is successfully submitted, the list gets rerendered without a full page reload. The Vue.js part of matestacks 'async' component only requests a fresh version of the list from the server and rerenders this specific part. Same applies for the delete action which is performed with matestacks 'action' component. If the form contains invalid data, matestacks 'form_input' component  automatically renders Active Record validation error messages. Additionally an error messages is shown for 5 seconds.
+Below, you see a page rendering a form and a list of the latest 5 instances of an Active Record model 'MyModel'. When the form is successfully submitted, the list gets rerendered without a full page reload. The Vue.js part of matestack's `async` component only requests a fresh version of the list from the server and rerenders this specific part. Same applies for the delete action which is performed with matestack's `action` component. If the form contains invalid data, matestack's `form_input` component  automatically renders Active Record validation error messages. Additionally, an error messages is shown for 5 seconds.
 
-All of this dynamic behaviour is implemented without adding any Javascript.
+All of this dynamic behaviour is implemented without writing a single line of Javascript.
 
 `app/matestack/pages/my_app/my_first_page.rb`
 

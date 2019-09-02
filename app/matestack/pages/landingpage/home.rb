@@ -12,6 +12,7 @@ class Pages::Landingpage::Home < Matestack::Ui::Page
   def response
     components {
       partial :hero
+      partial :summary
       partial :next, :why
       partial :why
       @features.each do |feature|
@@ -56,6 +57,23 @@ class Pages::Landingpage::Home < Matestack::Ui::Page
           div class: 'row' do
             div class: 'col-md-8 col-md-offset-2 video-column' do
               custom_landingpage_video
+            end
+          end
+        end
+      end
+    }
+  end
+
+  def summary
+    partial {
+      section id: 'summary', class: "background-white padded-section" do
+        div class: "container" do
+          div class: "row text-center" do
+            t("landingpage.summary").each do |key, attr|
+              div class: "col-md-4 col-sm-12" do
+                heading size: 2, class: "h-2", text: attr[:headline]
+                paragraph text: attr[:text]
+              end
             end
           end
         end
@@ -171,10 +189,10 @@ class Pages::Landingpage::Home < Matestack::Ui::Page
       section id: 'os-attributes', class: "background-lightgrey padded-section" do
         div class: "container" do
           div class: "row text-center" do
-            [:community_driven, :quality_controlled, :contributor_friendly].each do |attr|
+            t('landingpage.os').each do |key, attr|
               div class: "col-md-4 col-sm-12" do
-                heading size: 2, class: "h-2", text: t("landingpage.os.#{attr}.headline")
-                paragraph text: t("landingpage.os.#{attr}.text")
+                heading size: 2, class: "h-2", text: attr[:headline]
+                paragraph text: attr[:text]
               end
             end
           end
@@ -188,7 +206,5 @@ class Pages::Landingpage::Home < Matestack::Ui::Page
       custom_landingpage_footer
     }
   end
-
-
 
 end
