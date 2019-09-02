@@ -25,7 +25,7 @@ class Apps::Landingpage < Matestack::Ui::App
                         link path: :root_path
                       end
                       li do
-                        link path: :docs_path, params: {key: 'install'} do
+                        link path: "https://github.com/basemate/matestack-ui-core" do
                           plain "Show on Github"
                         end
                       end
