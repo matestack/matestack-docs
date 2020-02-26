@@ -16,7 +16,7 @@ class Apps::Landingpage < Matestack::Ui::App
                       span class:'icon-bar'
                     end
                     link class:'navbar-brand', path: :root_path do
-                      img alt:"basemate. keep it simple", path:"matestack-logo.png"
+                      img alt:"basemate. keep it simple", path:"matestack_logo.png"
                     end
                   end
                   div class:'collapse navbar-collapse', id:'bs-example-navbar-collapse-1' do

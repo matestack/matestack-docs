@@ -8,7 +8,19 @@ header{
 .header__logo {
   img{
     height: 40px;
-    margin-top: -6px;
+    margin-top: 6px;
+    @media only screen and (max-width: 1024px) {
+      margin-top: -3px;
+    }
+  }
+}
+
+.mdl-layout__drawer{
+  img.header__logo {
+    margin-top: 0px;
+    @media only screen and (max-width: 1024px) {
+      margin-top: 10px;
+    }
   }
 }
 
