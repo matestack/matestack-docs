@@ -10,7 +10,7 @@ class Components::Layout::Header < Matestack::Ui::StaticComponent
         div class: "mdl-layout__header-row" do
           span class: "mdl-layout-title header__logo" do
             link path: :root_path, class: "mobile-header__logo" do
-              img class: "header__logo", path: "matestack-logo.png", alt: "Matestack"
+              img class: "header__logo", path: "matestack_logo.png", alt: "Matestack"
             end
           end
           div class: "mdl-layout-spacer"

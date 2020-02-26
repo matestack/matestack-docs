@@ -31,7 +31,7 @@ module Apps
         div class: "mdl-layout__drawer" do
           span class: "mdl-layout-title header__logo" do
             link path: :root_path do
-              img class: "header__logo", path: "matestack-logo.png", alt: "Matestack"
+              img class: "header__logo", path: "matestack_logo.png", alt: "Matestack"
             end
           end
           nav class: "mdl-navigation" do
