@@ -144,7 +144,7 @@ GEM
     pg (1.1.4)
     pipetree (0.1.1)
     public_suffix (3.1.1)
-    puma (3.12.2)
+    puma (3.12.3)
     rack (2.0.8)
     rack-mini-profiler (1.0.2)
       rack (>= 1.2.0)
