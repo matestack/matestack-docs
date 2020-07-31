@@ -13,17 +13,5 @@
  *= require_self
  */
 
- @import "shared/colors";
- @import "shared/snackbar";
- @import "shared/header";
- @import "shared/sidebar";
- @import "shared/content";
- @import "shared/rouge";
- @import "shared/buttons";
+@import "./rouge";
 
- @import "guides/quick_start";
- @import "guides/introduction";
-
- body{
-   color: $basemate-color-gray;
- }

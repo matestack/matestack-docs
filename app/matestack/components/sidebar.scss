@@ -1,0 +1,62 @@
+.sidebar {
+  height: 100vh;
+  width: 240px; /* 0 width - change this with JavaScript */
+  position: fixed !important; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+.links-btn {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  text-align: left;
+}
+
+#wrapper {
+  .list-group-item {
+    border: none;
+    border-left: 3px solid transparent;
+    background-color: $m_dark;
+  }
+
+  .list-group-item-action {
+    color:  $m_light_grey;
+  }
+
+  .list-group-item-action:hover, .list-group-item-action:focus {
+    color: $m_light_grey;
+    background-color: $m_dark_grey;
+  }
+
+  ul a {
+    font-family: "Nunito Sans";
+    font-weight: 300;
+  }
+
+  .list-group-item.active {
+    border-left: 3px solid $m_orange;
+    background-color: $m_dark_grey;
+  }
+}
+
+@media (max-width: $medium_screen) {
+  .sidebar {
+    margin-left: -250px;
+  }
+}
+
+@media (min-width: $medium_screen) and (max-width: 860px) {
+  .sidebar {
+    width: 210px;
+  }
+}
+
+@media (min-width: 860px) {
+  .sidebar {
+    width: 240px;
+  }
+}

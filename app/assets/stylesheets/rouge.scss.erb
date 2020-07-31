@@ -1,0 +1,26 @@
+<% require 'rouge' %>
+<%= Rouge::Themes::Github.new.render %>
+div.highlight {
+  margin-bottom: 20px;
+
+  @media only screen and (max-width: 600px) {
+    overflow: scroll;
+    font-size: 10px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    overflow: scroll;
+    font-size: 9px;
+  }
+}
+
+pre.highlight {
+  display: block;
+  white-space: pre-wrap;
+  padding: 2rem 1.5rem;
+  margin: 0;
+}
+
+.n {
+  color: #ea2f0e;
+}

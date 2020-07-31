@@ -1,0 +1,115 @@
+class Components::Sidebar < Matestack::Ui::StaticComponent
+
+  def prepare
+    @file_doc_links = []
+    @tree = nil
+
+    # TODO: line below references master branch, so links below need update down the row
+    @github_base_api_url = 'https://api.github.com/repos/basemate/matestack-ui-core/contents'
+    @current_page = @options[:currentPage]
+    @current_path = @current_page.gsub('.md', '').gsub('.rb', '')
+
+    # TODO: Refactor below to work fine with new doc/api/guides structure! (esp. add /docs/ prefix to @github_component_docs_path)
+    case @current_path
+    when root_path
+      # what shall we display inside side nav on home page?
+    when components_path
+      @github_component_docs_path = "#{@github_base_api_url}/docs/components"
+      @tree = ::Rails.cache.fetch("components_remote_#{options[:path]}", expires_in: 1.hours) do
+        JSON.parse(RestClient.get(@github_component_docs_path).body)
+      end
+
+    when guides_path
+      @github_component_docs_path = "#{@github_base_api_url}/guides"
+      @tree = ::Rails.cache.fetch("guides_remote_#{options[:path]}", expires_in: 1.hours) do
+        JSON.parse(RestClient.get(@github_component_docs_path).body)
+      end
+    when spec_path
+      @github_component_spec_path = "#{@github_base_api_url}/spec/usage/components"
+      @tree = ::Rails.cache.fetch("spec_components_remote_#{options[:path]}", expires_in: 1.hours) do
+        JSON.parse(RestClient.get(@github_component_spec_path).body)
+      end
+
+      # TODO: missing "when"?
+      @github_concept_specs_path = "#{@github_base_api_url}/spec/usage/base"
+      @concept_specs_links = []
+      @tree_spec_base = ::Rails.cache.fetch("spec_base_remote_#{options[:path]}", expires_in: 1.hours) do
+        JSON.parse(RestClient.get(@github_concept_specs_path).body)
+      end
+      @tree_spec_base.each do |item|
+        if item["type"] == "file"
+          @concept_specs_links << item
+        end
+      end
+    else
+      # TODO: refactor home page sidebar links
+      if @current_page.starts_with?("/docs") && !@current_page.starts_with?("/docs/components")
+        @menu_links = ["install", "concepts", "components", "integrations", "tooling", "extend", "architecture", "contribute"]
+        @file_doc_links = []
+      end
+    end
+    if @tree
+      @tree.each do |item|
+        if item["type"] == "file"
+          @file_doc_links << item
+        end
+      end
+    end
+  end
+
+  def response
+    components {
+      div id: 'custom-sidebar', class: 'container-fluid' do
+        nav id: 'wrapper', class: 'bg-dark sidebar pt-5' do
+          div class: 'sidebar-sticky menu' do
+            ul id: 'listGroup', class: 'list-group list-group-flush' do
+              case @current_path
+              when '/'
+                # TODO: add content for sidebar on start page
+              when components_path
+                partial :side_title, 'components'
+                @file_doc_links.each do |item|
+                  partial :transition_link, :components_path, { key: item['name'],  }, item['name'].gsub(".md", "")
+                end
+              when guides_path
+                partial :side_title, 'guides'
+                @file_doc_links.each do |item|
+                  partial :transition_link, :guides_path, { key: item['name'],  }, item['name'].gsub(".md", "")
+                end
+              when spec_path
+                partial :side_title, 'concept specs'
+                @concept_specs_links.each do |item|
+                  partial :transition_link, :spec_path, { key: "usage/base/#{item['name']}" }, item['name'].gsub("_spec.rb", "")
+                end
+                partial :side_title, 'component specs'
+                @file_doc_links.each do |item|
+                  partial :transition_link, :spec_path, { key: "usage/components/#{item['name']}" }, item['name'].gsub("_spec.rb", "")
+                end
+              else
+                partial :side_title, 'documentation'
+                if @current_page.starts_with?("/docs") && !@current_page.starts_with?("/docs/components")
+                  @menu_links.each do |item|
+                    partial :transition_link, :docs_path, { key: item }, item
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    }
+  end
+
+  private
+
+  def side_title text
+    heading size: 5, class: 'list-group-item-heading text-white ml-2 pl-3 my-3 pt-4 pb-3', text: text.upcase
+  end
+
+  def transition_link path, params, text
+    button class: "links-btn", attributes: {"@click": "sidebarToggle"} do
+      transition path: path, params: params, text: text.camelcase, class: "list-group-item list-group-item-action"
+    end
+  end
+
+end

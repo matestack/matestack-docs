@@ -5,7 +5,7 @@ class Components::Md < Matestack::Ui::StaticComponent
   def response
     components {
       div class: "markdown-content", attributes: { "v-pre": true } do
-        plain parsed_markdown
+        plain parsed_markdown.html_safe
       end
     }
   end
