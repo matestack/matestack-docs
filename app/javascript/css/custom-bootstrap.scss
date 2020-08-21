@@ -1,0 +1,100 @@
+// Styleguide Color Palette
+$m_orange: #ff3b14;
+$m_dark: #1b1d35;
+$m_dark_grey: #323349;
+$m_grey: #606171;
+$m_lighter_grey: #EE3B23;
+$m_light_grey: #e8e8eb;
+$m_bright: #f4f4f5;
+$m_white: #ffffff;
+
+$small_screen: 576px;
+$medium_screen: 768px;
+$big_screen: 992px;
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+$theme-colors: (
+  "primary": $m_orange,
+  "dark": $m_dark
+);
+
+$link-color: $m_orange;
+$link-hover-color: darken($link-color, 15%);
+
+@import "~bootstrap/scss/bootstrap";
+
+.matestack_page_content {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: $m_white;
+}
+
+#hero {
+  background-color: $m_light_grey;
+}
+
+@font-face {
+  font-family: 'Geometrica';
+  src: url('../../assets/fonts/geometrica/3AB51B_0_0.eot');
+  src: url('../../assets/fonts/geometrica/3AB51B_0_0.eot?#iefix') format('embedded-opentype'),
+  url('../../assets/fonts/geometrica/3AB51B_0_0.woff2') format('woff2'),
+  url('../../assets/fonts/geometrica/3AB51B_0_0.woff') format('woff'),
+  url('../../assets/fonts/geometrica/3AB51B_0_0.ttf') format('truetype'),
+  url('../../assets/fonts/geometrica/3AB51B_0_0.svg#wf') format('svg');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,700;1,900&display=swap');
+
+html, body, p {
+  font-family: 'Nunito Sans';
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Geometrica';
+  color: $m_dark;
+}
+
+h1 {
+  font-size: 64px;
+  line-height: 85px;
+}
+
+h2 {
+  font-size: 38px;
+  line-height: 68px;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 34px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 12px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 34px;
+  color: $m_grey;
+}
+
+@media (max-width: $small_screen) {
+  h2 {
+    font-size: 30px;
+    line-height: 58px;
+  }
+}
+
+@import "../../matestack/components/footer";
+@import "../../matestack/components/header";
+@import "../../matestack/components/sidebar";
+@import "../../matestack/components/md";

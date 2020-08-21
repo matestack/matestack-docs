@@ -1,0 +1,87 @@
+header {
+  background: white;
+  align-items: center;
+  .navbar {
+    margin: 0px;
+    border: 0px;
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+
+    -webkit-box-shadow: 0 6px 6px -6px #999;
+    -moz-box-shadow: 0 6px 6px -6px #999;
+    box-shadow:     0 6px 6px -6px #999;
+    .navbar-toggler {
+      border: none;
+    }
+  }
+  .navbar-brand {
+    margin-right: 0;
+  }
+  .navbar-brand img {
+    max-width: 170px;
+    height: auto;
+    margin-left: 0px;
+    margin-bottom: 4px;
+  }
+  .symbol  {
+    width: 44px;
+  }
+  .nav-item {
+    margin-left: 17px;
+  }
+  .nav-link {
+    font-family: "Geometrica";
+    color: $m_dark;
+    font-size: 14px;
+    letter-spacing: 1.14px;
+    line-height: 28px;
+    text-align: center;
+    border-bottom: 4px solid transparent;
+    border-radius: 0px;
+  }
+  .nav-pills .nav-link.active {
+    background-color: transparent;
+    color: $m_dark;
+    border-bottom: 4px solid $m_orange;
+    border-radius: 0px;
+  }
+  .navbar-toggler {
+    box-sizing: border-box;
+    color: $m_dark;
+    margin-bottom: 6px;
+    .right-closed {
+      display: block;
+      width: 33px;
+    }
+    .right-open {
+      display: none;
+      width: 25px;
+      margin: 0 4px;
+    }
+    .left-closed {
+      width: 15px;
+      margin: 0 6px;
+    }
+  }
+  .expanded-toggler {
+    .left-closed {
+      transform: rotate(180deg);
+    }
+    .right-closed {
+      display: none;
+    }
+    .right-open {
+      display: block;
+    }
+  }
+  .navbar-nav li a:hover {
+    color: black;
+  }
+}
+
+@media (max-width: 50em) {
+  header .nav-item {
+    text-align: center !important;
+    margin-left: 0;
+  }
+}
