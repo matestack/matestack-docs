@@ -89,7 +89,7 @@ class Components::Sidebar < Matestack::Ui::StaticComponent
   end
 
   def transition_link path, params, text
-    button class: "links-btn", attributes: {"@click": "sidebarToggle"} do
+    button class: "links-btn" do
       transition path: path, params: params, text: text.camelcase, class: "list-group-item list-group-item-action"
     end
   end
