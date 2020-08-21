@@ -6,7 +6,7 @@ class Docs::Pages::Base < Matestack::Ui::Page
     # Final TODO: change branch to master
     # Final TODO: change line below to call GitHub API like in sidebar (?)
     @github_base_url = 'https://raw.githubusercontent.com/matestack/matestack-ui-core'
-    @branch = '06_07_2020_pwengerter_update_guides'
+    @branch = 'master'
     case context[:params][:format]
     when 'md'
       @file = context[:params][:key] + '.md'
@@ -30,8 +30,8 @@ class Docs::Pages::Base < Matestack::Ui::Page
       div class: 'container' do
         div class: 'row py-3' do
           div class: 'col-md-4 offset-md-3 col-12' do
-            heading size: 2, class: 'my-3 pr-3', text: @file.gsub('.md', '').gsub('.rb', '').gsub('/README', '').camelcase
-            heading size: 5, class: 'my-3', text: @sub_title.upcase
+            # heading size: 2, class: 'my-3 pr-3', text: @file.gsub('.md', '').gsub('.rb', '').gsub('/README', '').camelcase
+            # heading size: 5, class: 'my-3', text: @sub_title.upcase
           end
         end
       end

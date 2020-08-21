@@ -11,93 +11,75 @@ class Components::Sidebar < Matestack::Ui::StaticComponent
 
     # TODO: Refactor below to work fine with new doc/api/guides structure! (esp. add /docs/ prefix to @github_component_docs_path)
     case @current_path
-    when root_path
-      # what shall we display inside side nav on home page?
-    when components_path
-      @github_component_docs_path = "#{@github_base_api_url}/docs/components"
+    when base_api_path
+      @github_component_docs_path = "#{@github_base_api_url}/docs/api/1-base"
+      @tree = ::Rails.cache.fetch("base_remote_#{options[:path]}", expires_in: 1.hours) do
+        JSON.parse(RestClient.get(@github_component_docs_path).body)
+      end
+      if @tree
+        @tree.each do |item|
+          if item["type"] == "file"
+            @file_doc_links << item
+          end
+        end
+      end
+      @file_doc_links.sort_by! { |item| item['name'].scan(/\d+/).first.to_i }
+    when components_api_path
+      @github_component_docs_path = "#{@github_base_api_url}/docs/api/2-components"
       @tree = ::Rails.cache.fetch("components_remote_#{options[:path]}", expires_in: 1.hours) do
         JSON.parse(RestClient.get(@github_component_docs_path).body)
       end
-
+      if @tree
+        @tree.each do |item|
+          if item["type"] == "file"
+            @file_doc_links << item
+          end
+        end
+      end
+      @file_doc_links.sort_by! { |item| item['name'].scan(/\d+/).first.to_i }
     when guides_path
-      @github_component_docs_path = "#{@github_base_api_url}/guides"
+      @github_component_docs_path = "#{@github_base_api_url}/docs/guides"
       @tree = ::Rails.cache.fetch("guides_remote_#{options[:path]}", expires_in: 1.hours) do
         JSON.parse(RestClient.get(@github_component_docs_path).body)
       end
-    when spec_path
-      @github_component_spec_path = "#{@github_base_api_url}/spec/usage/components"
-      @tree = ::Rails.cache.fetch("spec_components_remote_#{options[:path]}", expires_in: 1.hours) do
-        JSON.parse(RestClient.get(@github_component_spec_path).body)
+      if @tree
+        @tree.each do |item|
+          if item["type"] == "dir"
+            @file_doc_links << item
+          end
+        end
       end
+      @file_doc_links.sort_by! { |item| item['name'].scan(/\d+/).first.to_i }
+    end
 
-      # TODO: missing "when"?
-      @github_concept_specs_path = "#{@github_base_api_url}/spec/usage/base"
-      @concept_specs_links = []
-      @tree_spec_base = ::Rails.cache.fetch("spec_base_remote_#{options[:path]}", expires_in: 1.hours) do
-        JSON.parse(RestClient.get(@github_concept_specs_path).body)
-      end
-      @tree_spec_base.each do |item|
-        if item["type"] == "file"
-          @concept_specs_links << item
-        end
-      end
-    else
-      # TODO: refactor home page sidebar links
-      if @current_page.starts_with?("/docs") && !@current_page.starts_with?("/docs/components")
-        @menu_links = ["install", "concepts", "components", "integrations", "tooling", "extend", "architecture", "contribute"]
-        @file_doc_links = []
-      end
-    end
-    if @tree
-      @tree.each do |item|
-        if item["type"] == "file"
-          @file_doc_links << item
-        end
-      end
-    end
   end
 
   def response
-    components {
-      div id: 'custom-sidebar', class: 'container-fluid' do
-        nav id: 'wrapper', class: 'bg-dark sidebar pt-5' do
-          div class: 'sidebar-sticky menu' do
-            ul id: 'listGroup', class: 'list-group list-group-flush' do
-              case @current_path
-              when '/'
-                # TODO: add content for sidebar on start page
-              when components_path
-                partial :side_title, 'components'
-                @file_doc_links.each do |item|
-                  partial :transition_link, :components_path, { key: item['name'],  }, item['name'].gsub(".md", "")
-                end
-              when guides_path
-                partial :side_title, 'guides'
-                @file_doc_links.each do |item|
-                  partial :transition_link, :guides_path, { key: item['name'],  }, item['name'].gsub(".md", "")
-                end
-              when spec_path
-                partial :side_title, 'concept specs'
-                @concept_specs_links.each do |item|
-                  partial :transition_link, :spec_path, { key: "usage/base/#{item['name']}" }, item['name'].gsub("_spec.rb", "")
-                end
-                partial :side_title, 'component specs'
-                @file_doc_links.each do |item|
-                  partial :transition_link, :spec_path, { key: "usage/components/#{item['name']}" }, item['name'].gsub("_spec.rb", "")
-                end
-              else
-                partial :side_title, 'documentation'
-                if @current_page.starts_with?("/docs") && !@current_page.starts_with?("/docs/components")
-                  @menu_links.each do |item|
-                    partial :transition_link, :docs_path, { key: item }, item
-                  end
-                end
+    div id: 'custom-sidebar', class: 'container-fluid' do
+      nav id: 'wrapper', class: 'bg-dark sidebar pt-5' do
+        div class: 'sidebar-sticky menu' do
+          ul id: 'listGroup', class: 'list-group list-group-flush' do
+            case @current_path
+            when base_api_path
+              partial :side_title, 'base api'
+              @file_doc_links.each do |item|
+                partial :transition_link, :base_api_path, { key: item['name'],  }, item['name'].gsub(".md", "")
+              end
+            when components_api_path
+              partial :side_title, 'components api'
+              @file_doc_links.each do |item|
+                partial :transition_link, :components_api_path, { key: item['name'],  }, item['name'].gsub(".md", "")
+              end
+            when guides_path
+              partial :side_title, 'guides'
+              @file_doc_links.each do |item|
+                partial :transition_link, :guides_path, { key: "#{item['name']}/README.md"  }, item['name'].split("-").last.humanize.camelcase
               end
             end
           end
         end
       end
-    }
+    end
   end
 
   private

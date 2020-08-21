@@ -9,16 +9,21 @@ class DocsAppController < ApplicationController
     render Docs::Pages::Api
   end
 
-  def components
-    render Docs::Pages::Components
+  def components_api
+    render Docs::Pages::ComponentsApi
+  end
+
+  def api
+    render Docs::Pages::BaseApi
+  end
+
+  def base_api
+    render Docs::Pages::BaseApi
   end
 
   def guides
     render Docs::Pages::Guides
   end
 
-  def spec
-    render Docs::Pages::Spec
-  end
 
 end

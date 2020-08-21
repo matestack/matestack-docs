@@ -6,7 +6,7 @@ class  Components::Header < Matestack::Ui::DynamicComponent
         button class: 'navbar-toggler', type: 'button', attributes: {"v-bind:class": "{ \"expanded-toggler\": open }", "@click": "sidebarToggle"} do
           img path: 'menu/arrow.svg', class: 'left-closed'
         end
-        link class: 'navbar-brand my-0 p-0', path: :root_path do
+        link class: 'navbar-brand my-0 p-0', path: "https://matestack.io" do
           img alt: 'matestack high quality software, simply delivered', path: 'logo/matestack_logo_orange.png', class: 'd-none d-sm-block'
           img alt: 'matestack high quality software, simply delivered', path: 'logo/matestack_logo_symbol.png', class: 'symbol d-block d-sm-none'
         end
@@ -17,23 +17,24 @@ class  Components::Header < Matestack::Ui::DynamicComponent
         div id: 'navbarSupportedContent', class: 'collapse navbar-collapse', attributes: {"v-bind:class": "{ \"show\": expanded }"} do
           ul class: 'navbar-nav nav-pills ml-auto align-items-center' do
             li class: 'nav-item' do
-              transition class: "nav-link #{active_class(:guides)}",
+              link class: "nav-link #{active_class(:guides)}",
               path: :guides_path,
               params: { key: 'README.md' },
               text: 'Guides'.upcase
             end
             li class: 'nav-item' do
-              transition class: "nav-link #{active_class(:components)}",
-              path: :api_path,
+              link class: "nav-link #{active_class(:components)}",
+              path: :components_api_path,
               params: { key: 'README.md' },
-              text: 'Api'.upcase
+              text: 'Components API'.upcase
             end
             li class: 'nav-item' do
-              transition class: "nav-link #{active_class(:spec)}",
-              path: :spec_path,
-              params: { key: 'usage/README.md' },
-              text: 'Specs'.upcase
+              link class: "nav-link #{active_class(:components)}",
+              path: :base_api_path,
+              params: { key: 'README.md' },
+              text: 'Base API'.upcase
             end
+
             # TODO: Add button links for "sponsor"/"book us"
           end
         end
