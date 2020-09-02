@@ -15,7 +15,7 @@ MatestackUiCore.Vue.component('components-header', {
         element.style.marginLeft = "0px"
       } else {
         this.open = false;
-        element.style.marginLeft = "-250px"
+        element.style.marginLeft = "-280px"
       }
     },
   }

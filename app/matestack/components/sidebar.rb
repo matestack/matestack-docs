@@ -56,7 +56,7 @@ class Components::Sidebar < Matestack::Ui::StaticComponent
 
   def response
     div id: 'custom-sidebar', class: 'container-fluid' do
-      nav id: 'wrapper', class: 'bg-dark sidebar pt-5' do
+      nav id: 'wrapper', class: 'bg-dark sidebar' do
         div class: 'sidebar-sticky menu' do
           ul id: 'listGroup', class: 'list-group list-group-flush' do
             case @current_path

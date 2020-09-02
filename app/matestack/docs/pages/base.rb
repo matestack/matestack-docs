@@ -21,12 +21,12 @@ class Docs::Pages::Base < Matestack::Ui::Page
   end
 
   def response
-    partial :hero
-    partial :content
+    hero
+    content
   end
 
   def hero
-    section id: 'hero', class: 'pt-5' do
+    section id: 'hero', class: 'pt-5 pb-2 m-5 rounded' do
       div class: 'container' do
         div class: 'row py-3' do
           div class: 'col-md-4 offset-md-3 col-12' do
@@ -42,7 +42,7 @@ class Docs::Pages::Base < Matestack::Ui::Page
     section id: 'content' do
       div class: 'container' do
         div class: 'row py-4' do
-          div class: 'col-lg-8 col-md-7 offset-md-3 col-12' do
+          div class: 'col-12' do
            docs_md path: @github_api_md_path, remote: true, lang: @md_language_wrapper
           end
         end

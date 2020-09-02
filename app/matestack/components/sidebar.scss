@@ -1,9 +1,10 @@
 .sidebar {
   height: 100vh;
-  width: 240px; /* 0 width - change this with JavaScript */
+  width: 260px; /* 0 width - change this with JavaScript */
+  padding-right: 15px;
   position: fixed !important; /* Stay in place */
   z-index: 1; /* Stay on top */
-  top: 0;
+  top: 56px;
   left: 0;
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
@@ -45,18 +46,18 @@
 
 @media (max-width: $medium_screen) {
   .sidebar {
-    margin-left: -250px;
+    margin-left: -280px;
   }
 }
 
 @media (min-width: $medium_screen) and (max-width: 860px) {
   .sidebar {
-    width: 210px;
+    width: 260px;
   }
 }
 
 @media (min-width: 860px) {
   .sidebar {
-    width: 240px;
+    width: 260px;
   }
 }
