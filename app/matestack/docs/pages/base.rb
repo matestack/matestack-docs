@@ -39,7 +39,7 @@ class Docs::Pages::Base < Matestack::Ui::Page
   end
 
   def content
-    section id: 'content' do
+    section id: 'content m-5' do
       div class: 'container' do
         div class: 'row py-4' do
           div class: 'col-12' do
