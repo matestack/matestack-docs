@@ -39,8 +39,8 @@ class Docs::Pages::Base < Matestack::Ui::Page
   end
 
   def content
-    section id: 'content m-5' do
-      div class: 'container' do
+    section id: 'content' do
+      div class: 'container m-5' do
         div class: 'row py-4' do
           div class: 'col-12' do
            docs_md path: @github_api_md_path, remote: true, lang: @md_language_wrapper
