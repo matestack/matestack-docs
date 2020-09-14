@@ -5,7 +5,7 @@ class Components::Sidebar < Matestack::Ui::StaticComponent
     @tree = nil
 
     # TODO: line below references master branch, so links below need update down the row
-    @github_base_api_url = 'https://api.github.com/repos/basemate/matestack-ui-core/contents'
+    @github_base_api_url = "https://#{ENV['GITHUB_USERNAME']}:#{ENV['GITHUB_PERSONAL_ACCESS_TOKEN']}@api.github.com/repos/basemate/matestack-ui-core/contents"
     @current_page = @options[:currentPage]
     @current_path = @current_page.gsub('.md', '').gsub('.rb', '')
 

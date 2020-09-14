@@ -10,9 +10,8 @@ class Components::Md < Matestack::Ui::StaticComponent
 
   def parsed_markdown
     if @options[:remote] == true
-      @md = ::Rails.cache.fetch("components_md_remote_#{options[:path]}", expires_in: 1.minute) do
-        RestClient.get(@options[:path]).body
-      end
+      result = RestClient.get(@options[:path])
+      @md = Base64.decode64 JSON.parse(result)['content']
     else
       @md = File.read("#{::Rails.root}/app/#{@options[:path]}.md")
     end
@@ -28,7 +27,7 @@ class Components::Md < Matestack::Ui::StaticComponent
 
     renderer = RougeRender.new(with_toc_data: true)
     parser = Redcarpet::Markdown.new(renderer, fenced_code_blocks: true)
-    parser.render(@md)
+    parser.render(@md.encode('utf-8', invalid: :replace, undef: :replace, replace: '_'))
   end
 
 end
