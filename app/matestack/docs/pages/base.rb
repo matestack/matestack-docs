@@ -26,7 +26,7 @@ class Docs::Pages::Base < Matestack::Ui::Page
   end
 
   def hero
-    section id: 'hero', class: 'pt-5 pb-2 my-5 rounded' do
+    section id: 'hero', class: 'pt-5 pb-2 mb-5' do
       div class: 'container' do
         div class: 'row py-3' do
           div class: 'col-md-4 offset-md-3 col-12' do
