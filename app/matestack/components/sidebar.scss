@@ -1,5 +1,5 @@
 .sidebar {
-  height: 100vh;
+  height: calc(100vh - 56px);
   width: 260px; /* 0 width - change this with JavaScript */
   // padding-right: 15px;
   position: fixed !important; /* Stay in place */
@@ -8,6 +8,10 @@
   left: 0;
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+.sidebar-sticky.menu {
+  padding-bottom: 2rem;
 }
 
 .links-btn {

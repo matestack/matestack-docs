@@ -1,0 +1,55 @@
+//ANIMATIONS
+
+.matestack-page-container{
+  .loading-state-element-wrapper{
+    position: fixed;
+    height: 40px;
+    width: 40px;
+    left: calc(50vw - 20px);
+    top: calc(50vh - 20px);
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease-in-out;
+
+    &.loading {
+      opacity: 1;
+    }
+
+    .bouncing-loader{
+      width: 60px;
+      height: 60px;
+      position: fixed;
+      top: 50%;
+      margin-top: -30px;
+      left: 50%;
+      margin-left: 100px;
+      border-radius: 30px;
+      background: #ff3b14;
+      animation: bounce 0.7s ease-in-out infinite;
+    }
+  }
+
+  .matestack-page-wrapper {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+
+    &.loading {
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes bounce {
+  0%{
+    transform: scale(0.7);
+    opacity: 0.7
+  }
+  75%{
+    transform: scale(0.5);
+    opacity: 1
+  }
+  100%{
+    transform: scale(0.7);
+    opacity: 0.7
+  }
+}
