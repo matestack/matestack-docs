@@ -26,16 +26,7 @@ class Docs::Pages::Base < Matestack::Ui::Page
   end
 
   def hero
-    section id: 'hero', class: 'pt-5 pb-2 mb-5' do
-      div class: 'container' do
-        div class: 'row py-3' do
-          div class: 'col-md-4 offset-md-3 col-12' do
-            # heading size: 2, class: 'my-3 pr-3', text: @file.gsub('.md', '').gsub('.rb', '').gsub('/README', '').camelcase
-            # heading size: 5, class: 'my-3', text: @sub_title.upcase
-          end
-        end
-      end
-    end
+    div class: 'hero'
   end
 
   def content
