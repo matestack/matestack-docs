@@ -14,7 +14,7 @@ class Components::Sidebar < Matestack::Ui::StaticComponent
     case @current_path
     when base_api_path
       @github_component_docs_path = "#{@github_base_api_url}/docs/api/000-base?ref=#{@branch}"
-      @tree = ::Rails.cache.fetch("base_remote_#{options[:path]}", expires_in: 1.minute) do
+      @tree = ::Rails.cache.fetch("base_remote_#{options[:path]}", expires_in: 5.minutes) do
         JSON.parse(RestClient.get(@github_component_docs_path).body)
       end
       if @tree
@@ -27,7 +27,7 @@ class Components::Sidebar < Matestack::Ui::StaticComponent
       @file_doc_links.sort_by! { |item| item['name'].scan(/\d+/).first.to_i }
     when components_api_path
       @github_component_docs_path = "#{@github_base_api_url}/docs/api/100-components?ref=#{@branch}"
-      @tree = ::Rails.cache.fetch("components_remote_#{options[:path]}", expires_in: 1.minute) do
+      @tree = ::Rails.cache.fetch("components_remote_#{options[:path]}", expires_in: 5.minutes) do
         JSON.parse(RestClient.get(@github_component_docs_path).body)
       end
       if @tree
@@ -40,7 +40,7 @@ class Components::Sidebar < Matestack::Ui::StaticComponent
       @file_doc_links.sort_by! { |item| item['name'].scan(/\d+/).first.to_i }
     when guides_path
       @github_component_docs_path = "#{@github_base_api_url}/docs/guides?ref=#{@branch}"
-      @tree = ::Rails.cache.fetch("guides_remote_#{options[:path]}", expires_in: 1.minute) do
+      @tree = ::Rails.cache.fetch("guides_remote_#{options[:path]}", expires_in: 5.minutes) do
         JSON.parse(RestClient.get(@github_component_docs_path).body)
       end
       if @tree

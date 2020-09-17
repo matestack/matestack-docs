@@ -10,8 +10,10 @@ class Components::Md < Matestack::Ui::StaticComponent
 
   def parsed_markdown
     if @options[:remote] == true
-      result = RestClient.get(@options[:path])
-      @md = Base64.decode64 JSON.parse(result)['content']
+      result = ::Rails.cache.fetch("components_md_remote_#{options[:path]}", expires_in: 5.minutes) do
+        Base64.decode64(JSON.parse(RestClient.get(@options[:path]))['content'])
+      end
+      @md = result
     else
       @md = File.read("#{::Rails.root}/app/#{@options[:path]}.md")
     end
