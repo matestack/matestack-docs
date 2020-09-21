@@ -62,19 +62,19 @@ class Components::Sidebar < Matestack::Ui::StaticComponent
           ul id: 'listGroup', class: 'list-group list-group-flush' do
             case @current_path
             when base_api_path
-              partial :side_title, 'base api'
+              side_title 'base api'
               @file_doc_links.each do |item|
-                partial :transition_link, :base_api_path, { key: item['name'],  }, item['name'].gsub(".md", "")
+                transition_link :base_api_path, { key: "#{item['name']}"  }, item['name'].split("-").last.humanize.camelcase.gsub(".md", "") unless item['name'] == 'README.md'
               end
             when components_api_path
-              partial :side_title, 'components api'
+              side_title 'components api'
               @file_doc_links.each do |item|
-                partial :transition_link, :components_api_path, { key: item['name'],  }, item['name'].gsub(".md", "")
+                transition_link :components_api_path, { key: item['name'],  }, item['name'].gsub(".md", "")
               end
             when guides_path
-              partial :side_title, 'guides'
+              side_title 'guides'
               @file_doc_links.each do |item|
-                partial :transition_link, :guides_path, { key: "#{item['name']}/README.md"  }, item['name'].split("-").last.humanize.camelcase
+                transition_link :guides_path, { key: "#{item['name']}/README.md"  }, item['name'].split("-").last.humanize.camelcase
               end
             end
           end
