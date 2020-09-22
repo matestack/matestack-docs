@@ -1,20 +1,23 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  host: postgres
+  username: <%= ENV.fetch("POSTGRES_USER") { "postgres" } %>
+  password: <%= ENV.fetch("POSTGRES_PASSWORD") { "postgres" } %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
-development:
-  <<: *default
-  database: matestack_docs_development
 
 test:
   <<: *default
-  database: matestack_docs_test
+  database: test
+
+development:
+  <<: *default
+  database: development
+
+staging:
+  <<: *default
+  database: staging
 
 production:
   <<: *default
-  database: matestack_docs_production
-  username: myapp
-  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+  database: production
