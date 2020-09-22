@@ -15,7 +15,7 @@ services:
   rails:
     image: registry.gitlab.com/matestack/matestack-docs
     ports:
-      - "3000:3000"
+      - "3001:3000"
     links:
       - postgres
       - redis
