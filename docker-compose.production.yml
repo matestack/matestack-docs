@@ -21,7 +21,7 @@ services:
     environment:
       RAILS_ENV: "production"
       POSTGRES_DB: "production"
-      DOCS_RAILS_MASTER_KEY: $RAILS_MASTER_KEY
+      SECRET_KEY_BASE: $SECRET_KEY_BASE
     env_file:
       - ./.env
     command: "bundle exec rails server --binding 0.0.0.0 --port 3000"
