@@ -86,6 +86,9 @@ class Components::Sidebar < Matestack::Ui::StaticComponent
   private
 
   def side_title text
+    link path: "https://github.com/matestack/matestack-ui-core", target: "_blank", class: "pt-4 text-decoration-none" do
+      small class: 'list-group-item-heading text-white ml-2 pl-3 my-3 pt-4 text-monospace font-weight-light', text: "matestack-ui-core v1.0.0"
+    end
     heading size: 5, class: 'list-group-item-heading text-white ml-2 pl-3 my-3 pt-4 pb-3', text: text.upcase
   end
 
