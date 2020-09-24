@@ -4,7 +4,8 @@ module Components::Registry
     docs_footer: Components::Footer,
     docs_header: Components::Header,
     docs_sidebar: Components::Sidebar,
-    docs_md: Components::Md
+    docs_md: Components::Md,
+    toc: Components::Toc::Toc
   )
 
 end

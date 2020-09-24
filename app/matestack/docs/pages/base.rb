@@ -31,10 +31,15 @@ class Docs::Pages::Base < Matestack::Ui::Page
 
   def content
     section id: 'content' do
-      div class: 'container' do
+      div class: 'container-fluid' do
         div class: 'row py-4 px-5' do
-          div class: 'col-12' do
+          div class: 'col-md-12 col-xl-9' do
            docs_md path: @github_api_md_path, remote: true, lang: @md_language_wrapper
+          end
+          div class: 'col-3 d-none d-xl-flex' do
+            async rerender_on: "page_loaded", id: "toc-list" do
+              toc
+            end
           end
         end
       end

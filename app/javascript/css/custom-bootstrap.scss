@@ -107,7 +107,4 @@ p {
   }
 }
 
-@import "../../matestack/components/footer";
-@import "../../matestack/components/header";
-@import "../../matestack/components/sidebar";
-@import "../../matestack/components/md";
+@import "./custom-components";

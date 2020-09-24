@@ -19,3 +19,4 @@ import 'css/animation'
 
 import MatestackUiCore from 'matestack-ui-core'
 import '../../matestack/components/header'
+import '../../matestack/components/toc/toc'

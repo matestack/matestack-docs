@@ -1,0 +1,23 @@
+.components-toc {
+  #toc{
+    border-left: 1px solid #eee;
+    font-size: 14px;
+    position: fixed;
+    background-color: white;
+    top: 285px;
+    height: calc(100vh - 285px);
+    overflow-y: auto;
+    .toc-title{
+      margin-left: 14px;
+    }
+    ul {
+      line-height: 25px;
+      list-style-type: none;
+      margin-left: -25px;
+    }
+    a {
+      color: grey;
+    }
+  }
+
+}
