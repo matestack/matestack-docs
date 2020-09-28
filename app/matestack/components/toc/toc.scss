@@ -2,7 +2,7 @@
   #toc{
     border-left: 1px solid #eee;
     font-size: 14px;
-    position: fixed;
+    position: absolute;
     background-color: white;
     top: 285px;
     height: calc(100vh - 285px);
@@ -17,6 +17,11 @@
     }
     a {
       color: grey;
+    }
+
+    &.sticky{
+      position: fixed;
+      top: 80px;
     }
   }
 

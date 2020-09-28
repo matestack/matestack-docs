@@ -103,9 +103,19 @@ import jQuery from "jquery";
 MatestackUiCore.Vue.component('components-toc', {
   mixins: [MatestackUiCore.componentMixin],
   data: function(){
-    return {}
+    return {
+      offsetTop: undefined
+    }
   },
   methods: {
+    handleScroll (event){
+      if (window.pageYOffset >= this.offsetTop){
+        document.querySelector('.components-toc #toc').classList.add('sticky')
+      }
+      else {
+        document.querySelector('.components-toc #toc').classList.remove('sticky')
+      }
+    }
   },
   mounted(){
     // setTimeout(function () {
@@ -116,6 +126,8 @@ MatestackUiCore.Vue.component('components-toc', {
         showEffect: 'none'
        });
     // }, 100);
-
-  }
+    console.log(document.querySelector('.components-toc #toc'))
+    this.offsetTop = document.querySelector('.components-toc #toc').offsetTop;
+    window.addEventListener('scroll', this.handleScroll);
+  },
 });
