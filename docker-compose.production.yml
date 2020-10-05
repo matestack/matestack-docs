@@ -22,6 +22,8 @@ services:
       RAILS_ENV: "production"
       POSTGRES_DB: "production"
       SECRET_KEY_BASE: $SECRET_KEY_BASE
+      GITHUB_USERNAME: $GITHUB_USERNAME
+      GITHUB_PERSONAL_ACCESS_TOKEN: $GITHUB_PERSONAL_ACCESS_TOKEN
     env_file:
       - ./.env
     command: "bundle exec rails server --binding 0.0.0.0 --port 3000"
