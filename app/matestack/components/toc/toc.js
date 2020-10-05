@@ -126,7 +126,6 @@ MatestackUiCore.Vue.component('components-toc', {
         showEffect: 'none'
        });
     // }, 100);
-    console.log(document.querySelector('.components-toc #toc'))
     this.offsetTop = document.querySelector('.components-toc #toc').offsetTop;
     window.addEventListener('scroll', this.handleScroll);
   },
