@@ -4,7 +4,7 @@ class Components::Sidebar < Matestack::Ui::StaticComponent
     @file_doc_links = []
     @tree = nil
 
-    @branch = '20200914_improve-and-extend-documentation'
+    @branch = 'master'
     # TODO: line below references master branch, so links below need update down the row
     @github_base_api_url = "https://#{ENV['GITHUB_USERNAME']}:#{ENV['GITHUB_PERSONAL_ACCESS_TOKEN']}@api.github.com/repos/basemate/matestack-ui-core/contents"
     @current_page = @options[:currentPage]
