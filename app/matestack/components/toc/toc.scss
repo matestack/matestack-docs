@@ -4,8 +4,8 @@
     font-size: 14px;
     position: absolute;
     background-color: white;
-    top: 285px;
-    height: calc(100vh - 285px);
+    top: 215px;
+    max-height: calc(100vh - 120px);
     overflow-y: auto;
     .toc-title{
       margin-left: 14px;
@@ -17,6 +17,11 @@
     }
     a {
       color: grey;
+
+      &.active{
+        color: #EE3B23;
+        font-weight: bold;
+      }
     }
 
     &.sticky{

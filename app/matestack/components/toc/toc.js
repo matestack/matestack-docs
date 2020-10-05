@@ -6,7 +6,7 @@ import jQuery from "jquery";
     var defaults = {
       noBackToTopLinks: false,
       title: '<i>Jump to...</i>',
-      minimumHeaders: 3,
+      minimumHeaders: 1,
       headers: 'h1, h2, h3, h4, h5, h6',
       listType: 'ol', // values: [ol|ul]
       showEffect: 'show', // values: [show|slideDown|fadeIn|none]
@@ -104,20 +104,36 @@ MatestackUiCore.Vue.component('components-toc', {
   mixins: [MatestackUiCore.componentMixin],
   data: function(){
     return {
-      offsetTop: undefined
+      offsetTop: undefined,
+      sections: {},
     }
   },
   methods: {
     handleScroll (event){
+      const self = this;
+      // sticky navigation
       if (window.pageYOffset >= this.offsetTop){
         document.querySelector('.components-toc #toc').classList.add('sticky')
       }
       else {
         document.querySelector('.components-toc #toc').classList.remove('sticky')
       }
+      // scroll spy
+      var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop
+      for(var i in self.sections) {
+        if(self.sections[i] <= scrollPosition + 50) {
+          if(document.querySelector('.components-toc .active')) {
+            document.querySelector('.components-toc .active').classList.remove('active');
+          }
+          if(document.querySelector('.components-toc a[href*=' + i + ']')) {
+            document.querySelector('.components-toc a[href*=' + i + ']').classList.add('active');
+          }
+        }
+      }
     }
   },
   mounted(){
+    const self = this;
     // setTimeout(function () {
       jQuery('#toc').toc({
         title: '<b class="toc-title">On this page: </b><br><br>',
@@ -128,5 +144,11 @@ MatestackUiCore.Vue.component('components-toc', {
     // }, 100);
     this.offsetTop = document.querySelector('.components-toc #toc').offsetTop;
     window.addEventListener('scroll', this.handleScroll);
+    var section = document.querySelectorAll(
+      '.markdown-content h2, .markdown-content h3, .markdown-content h4, .markdown-content h5, .markdown-content h6'
+    )
+    Array.prototype.forEach.call(section, function(e) {
+      self.sections[e.id] = e.offsetTop;
+    });
   },
 });
