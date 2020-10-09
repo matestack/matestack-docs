@@ -21,7 +21,7 @@ release:
   tags:
     - build #shared runner on shared machine
 
-deploy-production:
+deploy-production-de:
   stage: deploy-production
   only:
     - master
@@ -36,4 +36,38 @@ deploy-production:
     - docker-compose -f docker-compose.production.yml run --rm rails bundle exec rake db:migrate
     - docker-compose -f docker-compose.production.yml up -d rails
   tags:
-    - production-do-1 #specific runner on specific project machine
+    - production-do-de-1
+
+deploy-production-us:
+  stage: deploy-production
+  only:
+    - master
+  script:
+    - docker pull $CONTAINER_RELEASE_IMAGE
+    - chmod +x dbauth.sh
+    - "sh ./dbauth.sh"
+    - docker-compose -f docker-compose.production.yml up -d postgres
+    - docker-compose -f docker-compose.production.yml exec -d postgres sh /usr/bin/setpw.sh
+    - sleep 10 #make sure postgres container is ready
+    - docker-compose -f docker-compose.production.yml run --rm rails bundle exec rake db:create
+    - docker-compose -f docker-compose.production.yml run --rm rails bundle exec rake db:migrate
+    - docker-compose -f docker-compose.production.yml up -d rails
+  tags:
+    - production-do-us-1
+
+deploy-production-singapore-1:
+  stage: deploy-production
+  only:
+    - master
+  script:
+    - docker pull $CONTAINER_RELEASE_IMAGE
+    - chmod +x dbauth.sh
+    - "sh ./dbauth.sh"
+    - docker-compose -f docker-compose.production.yml up -d postgres
+    - docker-compose -f docker-compose.production.yml exec -d postgres sh /usr/bin/setpw.sh
+    - sleep 10 #make sure postgres container is ready
+    - docker-compose -f docker-compose.production.yml run --rm rails bundle exec rake db:create
+    - docker-compose -f docker-compose.production.yml run --rm rails bundle exec rake db:migrate
+    - docker-compose -f docker-compose.production.yml up -d rails
+  tags:
+    - production-do-singapore-1
