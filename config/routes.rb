@@ -1,24 +1,24 @@
 Rails.application.routes.draw do
 
-  root :to => redirect('/docs/guides/README.md')
-
-  # scope :api do
-  #   get '/components/*key', to: 'docs_app#components', as: 'components'
-  #   get '/*key', to: 'docs_app#api', as: 'api'
-  # end
+  root :to => redirect('/docs/start/README.md')
 
   scope :docs do
-    scope :guides do
-      get '/*key', to: 'docs_app#guides', as: 'guides'
-    end
-    scope :api do
-      # get '/*', to: 'docs_app#api', as: 'api'
+    get '/guides/*key', :to => redirect('/docs/start/README.md') #redirect former guides path
+    get '/api/(000-)base/*key', :to => redirect('/docs/start/README.md') # redirect former base api path
+    get '/api/(100-)components/*key', :to => redirect('/docs/api/%{key}.md') # redirect former component api path
 
-      get '/(000-)base/*key', to: 'docs_app#base_api', as: 'base_api'
-      # get '/(1-)base/*key', to: 'docs_app#base_api'
-      get '/(100-)components/*key', to: 'docs_app#components_api', as: 'components_api'
-      # get '/2-components/*key', to: 'docs_app#components_api'
+
+    get '/start/*key', to: 'docs_app#core_start', as: 'core_start'
+    get '/ui_components/*key', to: 'docs_app#core_ui_components', as: 'core_ui_components'
+    get '/reactive_components/*key', to: 'docs_app#core_reactive_components', as: 'core_reactive_components'
+    get '/reactive_apps/*key', to: 'docs_app#core_reactive_apps', as: 'core_reactive_apps'
+    get '/api/*key', to: 'docs_app#core_api', as: 'core_api'
+
+    scope :addons do
+      get 'start/*key', to: 'docs_app#addons', as: 'addons_start'
     end
+
   end
+
 
 end

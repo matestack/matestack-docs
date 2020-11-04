@@ -32,7 +32,7 @@ header {
   .nav-link {
     font-family: "Geometrica";
     color: $m_dark;
-    font-size: 11px;
+    font-size: 9px;
     letter-spacing: 1.14px;
     line-height: 28px;
     text-align: center;
@@ -44,6 +44,23 @@ header {
     color: $m_dark;
     border-bottom: 4px solid $m_orange;
     border-radius: 0px;
+  }
+  .nav-pills .nav-link.intro {
+    background-color: transparent;
+    color: black;
+    &:hover{
+      color: black;
+    }
+
+  }
+  .nav-pills .nav-link.highlight {
+    background-color: $m_orange;
+    color: white;
+    // border-bottom: 4px solid $m_orange;
+    border-radius: 4px;
+    padding-bottom: 0px;
+    padding-top: 5px;
+    margin-top: -8px;
   }
   .navbar-toggler {
     box-sizing: border-box;

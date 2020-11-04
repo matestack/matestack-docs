@@ -23,6 +23,8 @@ services:
     environment:
       RAILS_ENV: "development"
       POSTGRES_DB: "development"
+      GITHUB_USERNAME: $GITHUB_USERNAME
+      GITHUB_PERSONAL_ACCESS_TOKEN: $GITHUB_PERSONAL_ACCESS_TOKEN
     volumes:
       - ./:/app
       - gem-volume:/usr/local/bundle

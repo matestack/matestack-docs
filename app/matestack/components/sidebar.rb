@@ -1,5 +1,19 @@
 class Components::Sidebar < Matestack::Ui::StaticComponent
 
+  def generate_nav_data path, type="dir"
+    @tree = ::Rails.cache.fetch("base_remote_#{path}", expires_in: 5.minutes) do
+      JSON.parse(RestClient.get(@github_component_docs_path).body)
+    end
+    if @tree
+      @tree.each do |item|
+        if item["type"] == type
+          @file_doc_links << item
+        end
+      end
+    end
+    @file_doc_links.sort_by! { |item| item['name'].scan(/\d+/).first.to_i }
+  end
+
   def prepare
     @file_doc_links = []
     @tree = nil
@@ -12,47 +26,22 @@ class Components::Sidebar < Matestack::Ui::StaticComponent
 
     # TODO: Refactor below to work fine with new doc/api/guides structure! (esp. add /docs/ prefix to @github_component_docs_path)
     case @current_path
-    when base_api_path
-      @github_component_docs_path = "#{@github_base_api_url}/docs/api/000-base?ref=#{@branch}"
-      @tree = ::Rails.cache.fetch("base_remote_#{options[:path]}", expires_in: 5.minutes) do
-        JSON.parse(RestClient.get(@github_component_docs_path).body)
-      end
-      if @tree
-        @tree.each do |item|
-          if item["type"] == "file"
-            @file_doc_links << item
-          end
-        end
-      end
-      @file_doc_links.sort_by! { |item| item['name'].scan(/\d+/).first.to_i }
-    when components_api_path
+    when core_start_path
+      @github_component_docs_path = "#{@github_base_api_url}/docs/start?ref=#{@branch}"
+      generate_nav_data(@current_path)
+    when core_ui_components_path
+      @github_component_docs_path = "#{@github_base_api_url}/docs/ui_components?ref=#{@branch}"
+      generate_nav_data(@current_path)
+    when core_reactive_components_path
+      @github_component_docs_path = "#{@github_base_api_url}/docs/reactive_components?ref=#{@branch}"
+      generate_nav_data(@current_path)
+    when core_reactive_apps_path
+      @github_component_docs_path = "#{@github_base_api_url}/docs/reactive_apps?ref=#{@branch}"
+      generate_nav_data(@current_path)
+    when core_api_path
       @github_component_docs_path = "#{@github_base_api_url}/docs/api/100-components?ref=#{@branch}"
-      @tree = ::Rails.cache.fetch("components_remote_#{options[:path]}", expires_in: 5.minutes) do
-        JSON.parse(RestClient.get(@github_component_docs_path).body)
-      end
-      if @tree
-        @tree.each do |item|
-          if item["type"] == "file"
-            @file_doc_links << item
-          end
-        end
-      end
-      @file_doc_links.sort_by! { |item| item['name'].scan(/\d+/).first.to_i }
-    when guides_path
-      @github_component_docs_path = "#{@github_base_api_url}/docs/guides?ref=#{@branch}"
-      @tree = ::Rails.cache.fetch("guides_remote_#{options[:path]}", expires_in: 5.minutes) do
-        JSON.parse(RestClient.get(@github_component_docs_path).body)
-      end
-      if @tree
-        @tree.each do |item|
-          if item["type"] == "dir"
-            @file_doc_links << item
-          end
-        end
-      end
-      @file_doc_links.sort_by! { |item| item['name'].scan(/\d+/).first.to_i }
+      generate_nav_data(@current_path, "file")
     end
-
   end
 
   def response
@@ -61,20 +50,30 @@ class Components::Sidebar < Matestack::Ui::StaticComponent
         div class: 'sidebar-sticky menu' do
           ul id: 'listGroup', class: 'list-group list-group-flush' do
             case @current_path
-            when base_api_path
-              side_title 'base api'
+            when core_start_path
+              side_title 'start'
               @file_doc_links.each do |item|
-                transition_link :base_api_path, { key: "#{item['name']}"  }, item['name'].split("-").last.humanize.camelcase.gsub(".md", "") unless item['name'] == 'README.md'
+                transition_link :core_start_path, { key: "#{item['name']}"  }, item['name'].split("-").last.humanize.camelcase.gsub(".md", "") unless item['name'] == 'README.md'
               end
-            when components_api_path
-              side_title 'components api'
+            when core_ui_components_path
+              side_title 'UI components'
               @file_doc_links.each do |item|
-                transition_link :components_api_path, { key: item['name'],  }, item['name'].gsub(".md", "")
+                transition_link :core_ui_components_path, { key: "#{item['name']}"  }, item['name'].split("-").last.humanize.camelcase.gsub(".md", "") unless item['name'] == 'README.md'
               end
-            when guides_path
-              side_title 'guides'
+            when core_reactive_components_path
+              side_title 'Reactive components'
               @file_doc_links.each do |item|
-                transition_link :guides_path, { key: "#{item['name']}/README.md"  }, item['name'].split("-").last.humanize.camelcase
+                transition_link :core_reactive_components_path, { key: "#{item['name']}"  }, item['name'].split("-").last.humanize.camelcase.gsub(".md", "") unless item['name'] == 'README.md'
+              end
+            when core_reactive_apps_path
+              side_title 'Reactive apps'
+              @file_doc_links.each do |item|
+                transition_link :core_reactive_apps_path, { key: "#{item['name']}"  }, item['name'].split("-").last.humanize.camelcase.gsub(".md", "") unless item['name'] == 'README.md'
+              end
+            when core_api_path
+              side_title 'Components API'
+              @file_doc_links.each do |item|
+                transition_link :core_api_path, { key: item['name'],  }, item['name'].gsub(".md", "") unless item['name'] == 'README.md'
               end
             end
           end

@@ -17,22 +17,44 @@ class  Components::Header < Matestack::Ui::DynamicComponent
         div id: 'navbarSupportedContent', class: 'collapse navbar-collapse', attributes: {"v-bind:class": "{ \"show\": expanded }"} do
           ul class: 'navbar-nav nav-pills ml-auto align-items-center' do
             li class: 'nav-item' do
-              link class: "nav-link #{active_class(:guides)}",
-              path: :guides_path,
-              params: { key: 'README.md' },
-              text: 'Guides'.upcase
+              span class: "nav-link intro",
+              text: 'matestack-ui-core | UI in pure Ruby:'.upcase
             end
             li class: 'nav-item' do
-              link class: "nav-link #{active_class(:components)}",
-              path: :components_api_path,
+              link class: "nav-link #{active_class(:start)}",
+              path: :core_start_path,
               params: { key: 'README.md' },
-              text: 'Components API'.upcase
+              text: 'Start'.upcase
             end
             li class: 'nav-item' do
-              link class: "nav-link #{active_class(:components)}",
-              path: :base_api_path,
+              link class: "nav-link #{active_class(:ui_components)}",
+              path: :core_ui_components_path,
               params: { key: 'README.md' },
-              text: 'Base API'.upcase
+              text: 'UI components'.upcase
+            end
+            li class: 'nav-item' do
+              link class: "nav-link #{active_class(:reactive_components)}",
+              path: :core_reactive_components_path,
+              params: { key: 'README.md' },
+              text: 'Reactive components'.upcase
+            end
+            li class: 'nav-item' do
+              link class: "nav-link #{active_class(:reactive_apps)}",
+              path: :core_reactive_apps_path,
+              params: { key: 'README.md' },
+              text: 'Reactive Apps'.upcase
+            end
+            li class: 'nav-item' do
+              link class: "nav-link #{active_class(:api)}",
+              path: :core_api_path,
+              params: { key: 'README.md' },
+              text: 'API'.upcase
+            end
+            li class: 'nav-item' do
+              link class: "nav-link highlight #{active_class(:components)}",
+              path: :addons_start_path,
+              params: { key: 'README.md' },
+              text: 'Bootstrap Admin Addon'.upcase
             end
 
             # TODO: Add button links for "sponsor"/"book us"
@@ -48,12 +70,16 @@ class  Components::Header < Matestack::Ui::DynamicComponent
   def active_class(param)
     current_path = context[:request].fullpath
     case param
+    when :start
+      return 'active' if current_path.starts_with?('/docs/start')
+    when :ui_components
+      return 'active' if current_path.starts_with?('/docs/ui_components')
+    when :reactive_components
+      return 'active' if current_path.starts_with?('/docs/reactive_components')
+    when :reactive_apps
+      return 'active' if current_path.starts_with?('/docs/reactive_apps')
     when :api
-      return 'active' if current_path.starts_with?('/api') && !current_path.starts_with?('/api/components')
-    when :guides
-      return 'active' if current_path.starts_with?('/guides')
-    when :spec
-      return 'active' if current_path.starts_with?('/spec')
+      return 'active' if current_path.starts_with?('/docs/api')
     else
       return nil
     end
