@@ -2,8 +2,8 @@ class  Components::Header < Matestack::Ui::DynamicComponent
 
   def response
     header do
-      nav id: 'custom-shared-navbar', class: 'navbar navbar-expand-md fixed-top navbar-light bg-white my-0 pb-0' do
-        button class: 'navbar-toggler', type: 'button', attributes: {"v-bind:class": "{ \"expanded-toggler\": open }", "@click": "sidebarToggle"} do
+      nav id: 'custom-shared-navbar', class: 'navbar navbar-expand-xl fixed-top navbar-light bg-white my-0 pb-0' do
+        button class: 'navbar-toggler', type: 'button', attributes: {"v-bind:class": "{ \"expanded-toggler\": sidebarOpen }", "@click": "sidebarToggle"} do
           img path: 'menu/arrow.svg', class: 'left-closed'
         end
         link class: 'navbar-brand my-0 p-0', path: "https://matestack.io" do
@@ -16,7 +16,7 @@ class  Components::Header < Matestack::Ui::DynamicComponent
         end
         div id: 'navbarSupportedContent', class: 'collapse navbar-collapse', attributes: {"v-bind:class": "{ \"show\": expanded }"} do
           ul class: 'navbar-nav nav-pills ml-auto align-items-center' do
-            li class: 'nav-item' do
+            li class: 'nav-item hide-below-xxl' do
               span class: "nav-link intro",
               text: 'matestack-ui-core | UI in pure Ruby:'.upcase
             end
@@ -51,9 +51,9 @@ class  Components::Header < Matestack::Ui::DynamicComponent
               text: 'API'.upcase
             end
             li class: 'nav-item' do
-              link class: "nav-link highlight #{active_class(:components)}",
-              path: :addons_start_path,
-              params: { key: 'README.md' },
+              link class: "nav-link highlight px-2 my-4 #{active_class(:components)}",
+              path: "https://matestack.io/addons",
+              target: "_blank",
               text: 'Bootstrap Admin Addon'.upcase
             end
 
@@ -61,7 +61,6 @@ class  Components::Header < Matestack::Ui::DynamicComponent
           end
         end
       end
-      docs_sidebar currentPage: context[:request].fullpath
     end
   end
 

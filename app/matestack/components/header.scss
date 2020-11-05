@@ -1,6 +1,12 @@
 header {
   background: white;
   align-items: center;
+  .hide-below-xxl{
+    display: none;
+    @media (min-width: 1400px) {
+      display: inline;
+    }
+  }
   .navbar {
     margin: 0px;
     border: 0px;
@@ -10,8 +16,13 @@ header {
     // -webkit-box-shadow: 0 6px 6px -6px #999;
     // -moz-box-shadow: 0 6px 6px -6px #999;
     // box-shadow:     0 6px 6px -6px #999;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+
     .navbar-toggler {
       border: none;
+      &:focus{
+        outline: none;
+      }
     }
   }
   .navbar-brand {
@@ -60,7 +71,11 @@ header {
     border-radius: 4px;
     padding-bottom: 0px;
     padding-top: 5px;
-    margin-top: -8px;
+    // margin-top: -8px;
+    @media (min-width: 1200px) {
+      margin-top: -8px!important;
+      margin-bottom: 0px!important;
+    }
   }
   .navbar-toggler {
     box-sizing: border-box;

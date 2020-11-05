@@ -21,7 +21,7 @@
   text-align: left;
 }
 
-#wrapper {
+#sidebar {
   .list-group-item {
     border: none;
     border-left: 3px solid transparent;
@@ -48,20 +48,18 @@
   }
 }
 
+.sidebar.closed {
+  margin-left: -280px;
+}
+.sidebar.open {
+  margin-left: 0px;
+}
+
 @media (max-width: $medium_screen) {
   .sidebar {
     margin-left: -280px;
   }
-}
-
-@media (min-width: $medium_screen) and (max-width: 860px) {
-  .sidebar {
-    width: 260px;
-  }
-}
-
-@media (min-width: 860px) {
-  .sidebar {
-    width: 260px;
+  .sidebar.open {
+    margin-left: 0px;
   }
 }

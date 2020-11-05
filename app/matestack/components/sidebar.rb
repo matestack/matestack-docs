@@ -46,7 +46,7 @@ class Components::Sidebar < Matestack::Ui::StaticComponent
 
   def response
     div id: 'custom-sidebar', class: 'container-fluid' do
-      nav id: 'wrapper', class: 'bg-dark sidebar' do
+      nav id: 'sidebar', class: 'bg-dark sidebar' do
         div class: 'sidebar-sticky menu' do
           ul id: 'listGroup', class: 'list-group list-group-flush' do
             case @current_path
@@ -93,7 +93,7 @@ class Components::Sidebar < Matestack::Ui::StaticComponent
 
   def transition_link path, params, text
     button class: "links-btn" do
-      transition path: path, params: params, text: text.camelcase, class: "list-group-item list-group-item-action"
+      transition path: path, params: params, text: text.camelcase, class: "list-group-item list-group-item-action", delay: 300
     end
   end
 
