@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-gem 'matestack-ui-core', '~> 1.0.0'
+gem 'matestack-ui-core', '~> 1.1'
 
 # for calling Github API
 gem 'rest-client'

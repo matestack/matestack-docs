@@ -94,7 +94,7 @@ GEM
     ffi (1.13.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    haml (5.1.2)
+    haml (5.2.0)
       temple (>= 0.8.0)
       tilt
     http-accept (1.7.0)
@@ -114,7 +114,7 @@ GEM
       mini_mime (>= 0.1.1)
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
-    matestack-ui-core (1.0.0)
+    matestack-ui-core (1.1.0)
       cells-haml
       cells-rails
       haml
@@ -246,7 +246,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   jbuilder (~> 2.7)
   listen (~> 3.2)
-  matestack-ui-core (~> 1.0.0)
+  matestack-ui-core (~> 1.1)
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)

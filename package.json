@@ -8,7 +8,7 @@
     "@rails/webpacker": "4.2.2",
     "bootstrap": "^4.5.0",
     "jquery": "^3.5.1",
-    "matestack-ui-core": "https://github.com/matestack/matestack-ui-core#v1.0.0.rc.1",
+    "matestack-ui-core": "https://github.com/matestack/matestack-ui-core#v1.1.0",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
