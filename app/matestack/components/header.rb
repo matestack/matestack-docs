@@ -54,7 +54,7 @@ class  Components::Header < Matestack::Ui::DynamicComponent
               link class: "nav-link highlight px-2 my-4 #{active_class(:components)}",
               path: "https://matestack.io/addons",
               target: "_blank",
-              text: 'Bootstrap Admin Addon'.upcase
+              text: 'Matestack UI Addon'.upcase
             end
 
             # TODO: Add button links for "sponsor"/"book us"
